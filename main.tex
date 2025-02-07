@@ -5,6 +5,8 @@
 \usepackage{biblatex}
 \bibliography{references.bib}
 
+\usepackage{dsfont}
+
 \graphicspath{{images/}}
 
 
@@ -47,10 +49,10 @@ Tuy nhiên, nghiên cứu của nhóm nghiên cứu hướng đến một mục 
 \section{Cách Mô Hình CARTE Học từ Dữ Liệu Bảng}
 CARTE có thể học trên nhiều bảng dữ liệu khác nhau nhờ vào hai yếu tố chính: một cách biểu diễn mới cho đối tượng dạng bảng với cấu trúc đồ thị và một kiến trúc mạng nơ-ron sâu có khả năng nắm bắt ngữ cảnh(context) của bảng. Trong đó, cách biểu diễn đồ thị giúp đồng bộ hóa nhiều bảng dữ liệu vào cùng một không gian biểu diễn, làm cho việc tiền huấn luyện trên các dữ liệu nền tảng thiếu liên kết trước đây trở nên khả thi. Đồng thời, mạng nơ-ron sâu có khả năng nhận thức ngữ cảnh giúp truyền tải các thông tin nền sáng các tác vụ. 
 
-\subsection{Biểu Diễn Đồ Thị của Đối Tượng Bảng}
+\subsection{Biểu Diễn Đồ Thị của Đối Tượng Bảng} \label{sec:graph_representation}
 Việc sử dụng đồ thị là yếu tố quan trọng để giúp khái quát hóa các đối tượng bảng (tabular entity). Một đồ thị $G$ bao gồm tập hợp các nút và cạnh, trong đó các nút biểu diễn đối tượng và các cạnh mô tả quan hệ giữa chúng. Đồ thị là công cụ mạnh mẽ để biểu diễn thông tin quan hệ giữa các đối tượng, và học sâu trên đồ thị đã được chứng minh là có tiềm năng lớn trong các tác vụ liên quan cơ sở dữ liệu có quan hệ (relational database).
 
-CARTE tổ chức mỗi dòng dữ liệu trong bảng dưới dạng một đồ thị nhỏ. Giả sử bảng có $k$ cột, CARTE biểu diễn dòng dữ liệu thứ $i$ dưới dạng một đồ thị $G_i(X,E)$ trong đó $X$ và $E$ lần lượt là đặc trưng của nút và cạnh, được biểu diễn trong không gian $R^d$. Cấu trúc của $G_i(X,E)$ có dạng một đồ thị hình sao với $k-p_i$ nút lá, trong đó $p_i$ là số cột có giá trị bị thiếu trong dòng $i$. Trên mỗi đồ thị con này, các nút lá được gán nhãn theo giá trị ô dữ liệu và tên cột tương ứng.
+CARTE tổ chức mỗi dòng dữ liệu trong bảng dưới dạng một đồ thị nhỏ. Giả sử bảng có $k$ cột, CARTE biểu diễn dòng dữ liệu thứ $i$ dưới dạng một đồ thị $G_i(X,E)$ trong đó $X$ và $E$ lần lượt là đặc trưng của nút và cạnh, được biểu diễn trong không gian $R^d$. Cấu trúc của $G_i(X,E)$ có dạng một đồ thị hình sao với $k-p_i$ nút lá, trong đó $p_i$ là số cột có giá trị bị thiếu trong dòng $i$. Trên mỗi đồ thị con này, các nút lá được gán nhãn theo giá trị ô dữ liệu và tên cột tương ứng, có thể thấy thông qua Hình \ref{fig:graphlet_representation_of_tabular_entity}.
 
 Để biến đồ thị này thành đầu vào cho mạng nơ-ron, CARTE sử dụng một mô hình ngôn ngữ để khởi tạo các đặc trưng. Cụ thể là với các giá trị phân loại và tên cột, CARTE dùng mô hình ngôn ngữ để chuyển đổi giá trị thành dữ liệu dạng nhúng có $d$ chiều. Với các giá trị số, đặc trưng của nút được khởi tạo bằng cách nhân giá trị số với nhúng của tên cột tương ứng. Ví dụ, nếu một ô chứa giá trị 239 trong cột "H index", đặc trưng của nút đó sẽ là $239 \times E_{H index}$. Nút trung tâm của đồ thị được khởi tạo bằng giá trị trung bình của các nút lá và sẽ đóng vai trò là nút "readout". Trong mạng Neural Graph (Graph Neural Network - GNN), "node readout" (đọc nút) là một quá trình tổng hợp thông tin từ các nút (nodes) của đồ thị để tạo ra một biểu diễn đặc trưng có ý nghĩa cho toàn bộ đồ thị hoặc một phần của nó. 
 
@@ -69,25 +71,70 @@ Nhờ những đặc điểm trên, cách tiếp cận đồ thị của CARTE g
 
 
 \subsection{Tiền Huấn Luyện Mô Hình từ Cơ Sở Tri Thức Lớn}
-CARTE được tiền huấn luyện trên YAGO3 (Mahdisoltani et al., 2013), một cơ sở tri thức lớn được xây dựng từ Wikidata và các nguồn khác, chứa thông tin thực tế về thế giới. YAGO lưu trữ dữ liệu dưới dạng đồ thị tri thức, bao gồm các bộ ba (head, relation, tail). Ví dụ, bộ ba (“Louvre”, “is located in”, “Paris”) trong Hình 2 là một mẫu dữ liệu có thể tìm thấy trong YAGO. Phiên bản hiện tại của YAGO chứa hơn 18,1 triệu bộ ba với 6,3 triệu thực thể.
 
-Trong phần này, chúng tôi mô tả quá trình tiền huấn luyện của CARTE, được tóm tắt trong Hình 2. Từ đồ thị tri thức, chúng tôi trích xuất các đồ thị con nhỏ hơn (graphlets) phù hợp để làm đầu vào cho CARTE. Để thực hiện học tự giám sát với hàm mất mát tương phản (contrastive loss), chúng tôi thêm vào batch các phiên bản bị cắt ngắn của các graphlets đã chọn. Thông qua quá trình huấn luyện, CARTE học cách tổng hợp thông tin dựa trên ngữ cảnh được cung cấp.
+\begin{figure} 
+    \centering
+    \includegraphics[scale = 0.8]{carte_pretraining_process.png}
+    \caption{CARTE tiền huấn luyện bằng cách tạo graphlet từ một đồ thị tri thức lớn. Những graphlet này được đưa vào mạng nơ-ron để huấn luyện theo phương pháp tự giám sát, giúp mô hình học cách tổng hợp thông tin từ các bảng thông qua quan hệ giữa các cột.}
+    \label{fig:carte_pretraining_process}
+\end{figure}
 
-Graphlets cho tiền huấn luyện
-Từ đồ thị tri thức lớn YAGO, chúng tôi xây dựng các graphlets nhỏ hơn có thể dùng làm đầu vào cho CARTE. Để tạo một graphlet phù hợp cho một thực thể, chúng tôi trích xuất tiểu đồ của nó trong phạm vi k quan hệ liên kết (k-hop relations). Để duy trì cấu trúc được trình bày trong Hình 1, đồng thời tận dụng thêm thông tin từ nhiều bước nhảy, chúng tôi đặt k=2, nhưng giới hạn số lượng quan hệ 1-hop và 2-hop lần lượt là 100 và 10.
+CARTE được tiền huấn luyện trên YAGO3, một cơ sở tri thức lớn được xây dựng từ Wikidata và các nguồn khác, chứa thông tin thực tế về thế giới. YAGO lưu trữ dữ liệu dưới dạng đồ thị tri thức, bao gồm các bộ ba (head, relation, tail). Ví dụ, bộ ba (“Louvre”, “is located in”, “Paris”) trong Hình \ref{fig:carte_pretraining_process} là một mẫu dữ liệu có thể tìm thấy trong YAGO. Phiên bản hiện tại của YAGO chứa hơn 18,1 triệu bộ ba với 6,3 triệu thực thể.
 
-Các graphlets từ bảng dữ liệu (Hình 1) sử dụng một token làm node trung tâm cho mỗi hàng, trong khi các graphlets từ đồ thị tri thức có thể sử dụng tên thực thể (ví dụ: “Louvre”). Để tránh sự khác biệt này, chúng tôi sử dụng một token làm node trung tâm, kèm theo một node bổ sung chứa tên thực thể và được kết nối bằng quan hệ “has name”. Cuối cùng, tương tự như Mục 3.1, chúng tôi khởi tạo các node và cạnh bằng cách sử dụng embedding từ mô hình ngôn ngữ FastText (Mikolov et al., 2017).
+Trong phần này, nhóm sẽ mô tả quá trình tiền huấn luyện của mô hình CARTE, được tóm tắt trong Hình \ref{fig:carte_pretraining_process}. Từ đồ thị tri thức, các đồ thị con (graphlets) phù hợp sẽ được trích xuất để xử lý làm đầu vào cho CARTE. Để thực hiện học tự giám sát với hàm mất mát tương phản (contrastive loss), nhóm thêm vào batch các phiên bản bị cắt ngắn của các graphlets đã chọn để đó mô hình học cách tổng hợp thông tin dựa trên ngữ cảnh được cung cấp.
 
-Tạo batch mẫu
-Để tạo một batch mẫu với kích thước $N_b$, đầu tiên chúng tôi chọn các thực thể từ YAGO để đưa vào batch và tạo các graphlets tương ứng. Trong đó, 90\% $N_B$ được lấy từ các thực thể có ít nhất 6 quan hệ 1-hop, 10\% còn lại được lấy từ các thực thể khác. Lý do chính cho việc lấy mẫu như vậy là do phần lớn thực thể trong YAGO chỉ có một hoặc hai quan hệ 1-hop, trong khi dữ liệu dạng bảng thường có nhiều hơn (tương ứng với nhiều cột). Hơn nữa, giá trị 6 được chọn để đảm bảo rằng số quan hệ trung bình trong batch mẫu xấp xỉ 15.
+Từ đồ thị tri thức lớn YAGO, nhóm xây dựng các graphlets nhỏ hơn có thể dùng làm đầu vào cho CARTE. Để tạo một graphlet phù hợp cho một thực thể, nhóm trích xuất tiểu đồ của nó trong phạm vi k quan hệ liên kết (k-hop relations). Để duy trì cấu trúc được trình bày trong Hình \ref{fig:graphlet_representation_of_tabular_entity}, đồng thời tận dụng thêm thông tin từ nhiều bước nhảy, nhóm đặt k=2, nhưng giới hạn số lượng quan hệ 1-hop và 2-hop lần lượt là 100 và 10.
 
-Để áp dụng học tự giám sát với mất mát tương phản, chúng tôi tạo ra các mẫu dương bằng cách xóa một phần ngẫu nhiên (từ 30\% đến 70\%) số cạnh trong graphlets gốc. Hình 2 minh họa một graphlet của thực thể “Louvre” cùng với phiên bản bị cắt ngắn của nó.
+Các graphlets từ bảng dữ liệu trong Hình \ref{fig:graphlet_representation_of_tabular_entity} sử dụng một token làm node trung tâm (center node) cho mỗi hàng, trong khi các graphlets từ đồ thị tri thức có thể sử dụng tên thực thể (ví dụ: “Louvre”). Để tránh sự khác biệt này, nhóm sử dụng một token làm node trung tâm, kèm theo một node bổ sung chứa tên thực thể và được kết nối bằng quan hệ “has name”. Cuối cùng, tương tự như đã đề cập ở phần \ref{sec:graph_representation}, nhóm khởi tạo các node và cạnh bằng cách sử dụng embedding từ mô hình ngôn ngữ FastText.
 
-Kiến trúc mô hình
-Hình 3 mô tả kiến trúc của CARTE. Về cơ bản, CARTE sử dụng mô hình Transformer encoder truyền thống của Vaswani et al. (2017) và điều chỉnh nó thành một mạng đồ thị với cơ chế chú ý. Một thành phần quan trọng trong kiến trúc của CARTE là lớp tự chú ý (self-attention) tính toán mức độ quan trọng của các node và cạnh trong đồ thị. Trong mô hình đồ thị, cơ chế chú ý điều chỉnh tầm quan trọng của các node lân cận đối với một node nhất định.
+Để tạo một batch mẫu với kích thước $N_b$, đầu tiên nhóm chọn các thực thể từ YAGO sẽ được đưa vào batch và tạo các graphlets tương ứng. Trong đó, 90\% $N_b$ được lấy từ các thực thể có ít nhất 6 quan hệ 1-hop, 10\% còn lại được lấy từ các thực thể khác. Lý do chính cho việc lấy mẫu như vậy là do phần lớn thực thể trong YAGO chỉ có một hoặc hai quan hệ 1-hop, trong khi dữ liệu dạng bảng thường có nhiều hơn (tương ứng với nhiều cột).
 
-Đối với dữ liệu bảng, điều này có nghĩa là xác định mức độ quan trọng của từng giá trị trong hàng, với ngữ cảnh được bổ sung bởi thông tin cột. Chúng tôi sẽ trình bày chi tiết về cơ chế chú ý của CARTE để nắm bắt ngữ cảnh và mối quan hệ giữa các thực thể.
+Để áp dụng học tự giám sát với mất mát tương phản, nhóm tạo ra các mẫu dương bằng cách rút gọn cấu trúc thông qua việc xóa một phần ngẫu nhiên (từ 30\% đến 70\%) số cạnh trong graphlets gốc. Hình \ref{fig:carte_pretraining_process} minh họa một graphlet của thực thể “Louvre” cùng với phiên bản bị cắt ngắn của nó.
 
+\begin{figure} 
+    \centering
+    \includegraphics[scale = 0.8]{carte_architecture.png}
+    \caption{CARTE sử dụng các đồ thị làm đầu vào, với đặc trưng là các nút và cạnh được dùng trong lớp self-attention. Các lớp này cập nhật đặc trưng nút dựa trên thông tin cạnh và sử dụng attention mask để duy trì cấu trúc đồ thị. Lớp Tổng hợp \& Đọc trích xuất đặc trưng từ nút trung tâm (center node), và đầu ra cuối cùng được dùng để tính toán cho hàm mất mát đối lập (contrastive loss).}
+    \label{fig:carte_architecture}
+\end{figure}
+
+Hình \ref{fig:carte_architecture} mô tả kiến trúc của CARTE. Về cơ bản, CARTE sử dụng mô hình Transformer encoder truyền thống của và sửa đội thành một mạng đồ thị với cơ chế chú ý (graph attentional network). Một thành phần quan trọng trong kiến trúc của CARTE là lớp tự chú ý (self-attention) tính toán mức độ quan trọng của các node và cạnh trong đồ thị. Trong mô hình đồ thị, cơ chế chú ý điều chỉnh tầm quan trọng của các node lân cận đối với một node nhất định. Đối với dữ liệu bảng, điều này có nghĩa là xác định mức độ quan trọng của từng giá trị trong hàng, với ngữ cảnh được bổ sung bởi thông tin cột.
+
+Chúng ta sẽ đi sâu vào cơ chế tập trung (attention) của CARTE, được thiết kế để nắm bắt ngữ cảnh và mối quan hệ giữa các thành phần. Để đảm bảo tính nhất quán trong ký hiệu, chúng ta ký hiệu vector bằng một mũi tên phía trên ($\vec{A}$), ma trận bằng chữ in đậm (\textbf{A}), và các đại lượng vô hướng (scalar) bằng chữ thường (A). Để giúp việc đọc hiểu dễ dàng hơn, chúng ta chỉ xem xét một lớp tập trung đơn đầu (single-head attention), nhưng cách tiếp cận này có thể mở rộng thành nhiều đầu (multi-head) bằng cách ghép nối hoặc trung bình các kết quả tập trung.
+
+Xem xét một đồ thị có $N$ nút thì ta có $\vec{X}_i^{(l)} \in \mathds{R}^d$ là đặc trưng của nút thứ $i$, với $\vec{X}_ij^{(l)} \in \mathds{R}^d$ là đặc trưng của cạnh hướng từ $j$ tới $i$. Trong mô hình CARTE, mỗi đồ thị con (graphlet) luôn bao gồm một nút trung tâm, được ký hiệu là 
+$i=1$. 
+
+Cơ chế tập trung dựa trên ba thành phần chính: truy vấn (query), khóa (key), và giá trị (value). Truy vấn đại diện cho thông tin cần quan tâm—trong trường hợp này là các nút. Vì vậy, chúng ta sử dụng cách tiếp cận phổ biến và chỉ dựa vào thông tin của nút để xây dựng truy vấn. Ngược lại, cặp khóa-giá trị cần phản ánh những thông tin mà các nút lân cận có thể cung cấp. Do đó, ta đưa thông tin cạnh vào quá trình xây dựng khóa và giá trị. Cụ thể, ba thành phần này được xác định như Hình \ref{fig:architecture_attention_mechanic}.
+
+\begin{figure} 
+    \centering
+    \includegraphics[scale = 0.8]{architecture_attention_mechanic.png}
+    \caption{3 thành phần chính của cơ chế attention}
+    \label{fig:architecture_attention_mechanic}
+\end{figure}
+
+Các yếu tố $W_Q, W_K, W_V$ trong Hình \ref{fig:architecture_attention_mechanic} là các trọng số để huấn luyện và dấu $\odot$ đánh dấu phép nhân từng phần tử (element-wise multiplication) được lấy cảm hứng từ một số nghiên cứu khác về phương pháp nhúng đồ thị tri thức. Dựa trên công thức tính attention score theo phương pháp scaled dot-product attention, trọng số tập trung của nút $j$ với nút $i$, ký hiệu là $A_ij$ được tính như Hình \ref{fig:attention_score}. 
+
+\begin{figure} 
+    \centering
+    \includegraphics[scale = 0.8]{attention_score.png}
+    \caption{Công thức Attention Score theo phương pháp scaled dot-product attention}
+    \label{fig:attention_score}
+\end{figure}
+
+Ở đây, tổng chỉ xét trên các nút lân cận của $i$, điều này tương ứng với một bước "che mặt nạ" (masking) để bảo toàn cấu trúc đồ thị. Việc đưa loại quan hệ (chẳng hạn như nhãn cột trong bảng dữ liệu) vào tính toán attention giúp mô hình tái diễn giải ngữ cảnh chính xác hơn. Chẳng hạn, một thực thể như "George Bush" có thể chỉ tổng thống thứ 41 hoặc 43 của Mỹ, hoặc một tàu sân bay mang tên này. Ý nghĩa của nó phụ thuộc vào mối quan hệ đi kèm (ví dụ: "George Bush", "con của", "George Bush"). Nếu thay bằng mối quan hệ khác như "cha của", thì cách xác định thực thể sẽ thay đổi hoàn toàn.
+
+Đầu ra của các lớp attention được biểu diễn thông qua các đặc trưng đã được biến đổi của nút và cạnh. Cụ thể, đặc trưng mới của nút $i$ ở tầng $l+1$ được tính như Hình \ref{fig:attention_layers_output}. Ở các tầng cuối cùng, mô hình sử dụng một lớp attention nhưng không cập nhật thông tin cạnh. Sau đó, một lớp tổng hợp (readout layer) sẽ trích xuất biểu diễn của nút trung tâm. Đối với giai đoạn tiền huấn luyện (pretraining), đầu ra từ mô hình sẽ được xử lý để tính toán hàm mất mát tương phản (contrastive loss).
+
+\begin{figure} 
+    \centering
+    \includegraphics[scale = 0.8]{attention_layers_output.png}
+    \caption{Kết quả của lớp attention.}
+    \label{fig:attention_layers_output}
+\end{figure}
+
+Để thiết kế hàm mất mát tương phản không giám sát (self-supervised contrastive loss), chúng ta áp dụng khung phương pháp từ một nghiên cứu khác. Cụ thể, đồ thị con gốc (original graphlet) và một phiên bản bị cắt bớt (truncation) được xem là mẫu dương (positives), trong khi các đồ thị con khác trong cùng một lô được coi là mẫu âm (negatives). Quá trình học dựa trên độ tương đồng cosin giữa các đầu ra của mạng, sau đó được đưa vào hàm mất mát InfoNCE, một kỹ thuật phổ biến trong học biểu diễn tương phản để tối ưu hóa khoảng cách giữa các mẫu dương và âm.
 
 \subsection{Tinh Chỉnh cho Tác Vụ}
 Trong quá trình fine-tuning cho một tác vụ cụ thể, CARTE chỉ tái sử dụng một phần của kiến trúc đã được tiền huấn luyện (như trong Hình 3). Cụ thể, mô hình giữ lại:
@@ -103,13 +150,13 @@ Nếu sử dụng một kiến trúc quá sâu, thông tin đặc trưng của c
 
 Số lớp chú ý (attention layers) được đặt bằng số bước quan hệ tối đa k-hop, với k = 1 trong trường hợp này.
 Bộ phân loại cuối cùng chỉ đơn giản là một mạng nơ-ron tuyến tính.
-Với mô hình cơ bản này, chúng tôi xem xét hai cách suy luận (inference) trên dữ liệu downstream:
+Với mô hình cơ bản này, nhóm xem xét hai cách suy luận (inference) trên dữ liệu downstream:
 
 \subsubsection{Suy luận trên dữ liệu bảng đơn}
 Đây là trường hợp phổ biến nhất, trong đó chúng ta có một bảng dữ liệu duy nhất và cần dự đoán một biến mục tiêu (target variable). Trước khi biến đổi bảng thành đồ thị:
 
 Biến số (numerical variables) được xử lý trước bằng phép biến đổi lũy thừa (power transform) (Yeo \& Johnson, 2000), giúp ổn định phân phối dữ liệu. Cách tiếp cận này đã chứng minh hiệu quả trong nhiều nghiên cứu trước đây (Hollmann et al., 2023; Cvetkov-Iliev et al., 2023).
-Để tăng độ chính xác và tránh overfitting, chúng tôi sử dụng chiến lược bagging (Breiman, 1996):
+Để tăng độ chính xác và tránh overfitting, nhóm sử dụng chiến lược bagging (Breiman, 1996):
 
 \begin{itemize}
     \item Tạo nhiều mô hình bằng cách sử dụng các tập train-validation khác nhau.
@@ -118,14 +165,14 @@ Biến số (numerical variables) được xử lý trước bằng phép biến
 \end{itemize}
 
 \subsubsection{Học chuyển giao từ một bảng nguồn sang bảng đích}
-Chúng tôi cũng áp dụng CARTE cho học chuyển giao (transfer learning), khi có một bảng nguồn $X_S$có thể hỗ trợ dự đoán trên bảng đích $X_T$. Trong nhiều trường hợp, bảng nguồn có nhiều dữ liệu huấn luyện hơn bảng đích.
+nhóm cũng áp dụng CARTE cho học chuyển giao (transfer learning), khi có một bảng nguồn $X_S$có thể hỗ trợ dự đoán trên bảng đích $X_T$. Trong nhiều trường hợp, bảng nguồn có nhiều dữ liệu huấn luyện hơn bảng đích.
 
 Quá trình fine-tuning trong học chuyển giao được thực hiện như sau:
 
 Huấn luyện CARTE trên cả hai bảng nguồn và đích cùng lúc.
 
 Do dữ liệu được biểu diễn dưới dạng đồ thị, việc fine-tuning có thể diễn ra mà không cần các cột giữa hai bảng phải khớp nhau.
-Tuy nhiên, chúng tôi yêu cầu rằng nhãn đầu ra $y_X$ và $y_T$ của bảng nguồn và đích phải có mối quan hệ tương tự.
+Tuy nhiên, nhóm yêu cầu rằng nhãn đầu ra $y_X$ và $y_T$ của bảng nguồn và đích phải có mối quan hệ tương tự.
 Điều chỉnh nhãn của bảng nguồn để phù hợp với bảng đích:
 
 Nếu $y_T$ là biến phân loại: chuyển đổi $y_S$ từ bài toán hồi quy thành phân loại nhị phân.
@@ -142,12 +189,12 @@ Trong hầu hết các trường hợp, early stopping xảy ra trước khi t�
 Kết hợp mô hình transfer learning với mô hình single-table:
 
 Khi bảng nguồn không chứa đủ thông tin hữu ích, mô hình học chuyển giao có thể không tốt hơn so với mô hình chỉ sử dụng bảng đích.
-Chúng tôi sử dụng softmax ensemble để kết hợp hai mô hình này. Trọng số của softmax được tính dựa trên điểm dự đoán từ tập validation, được chuẩn hóa bằng độ lệch chuẩn giữa các mô hình để điều chỉnh nhiệt độ (temperature scaling).
+nhóm sử dụng softmax ensemble để kết hợp hai mô hình này. Trọng số của softmax được tính dựa trên điểm dự đoán từ tập validation, được chuẩn hóa bằng độ lệch chuẩn giữa các mô hình để điều chỉnh nhiệt độ (temperature scaling).
 
 \subsubsection{Học chung trên nhiều bảng}
 Trong bài toán học chuyển giao, việc chọn bảng nguồn phù hợp đóng vai trò quan trọng. Nếu có nhiều bảng dữ liệu thuộc cùng một lĩnh vực hoặc tổ chức, CARTE có thể khai thác tất cả các bảng này để tìm ra thông tin hữu ích nhất.
 
-Giả sử có một bảng đích $X_T$ và tập hợp các bảng nguồn ${X_{S,1}, ..., X_{S,m}}$, chúng tôi tiến hành như sau:
+Giả sử có một bảng đích $X_T$ và tập hợp các bảng nguồn ${X_{S,1}, ..., X_{S,m}}$, nhóm tiến hành như sau:
 
 Xây dựng từng mô hình học riêng lẻ:
 
@@ -156,7 +203,7 @@ Sau đó, huấn luyện từng mô hình pairwise joint learner trên từng c�
 Ensemble để chọn mô hình tốt nhất:
 
 Không phải mọi cặp bảng đều mang lại thông tin hữu ích như nhau.
-Chúng tôi sử dụng chiến lược ensemble như trên, kết hợp tất cả các mô hình học đôi (pairwise learners) và mô hình single-table.
+nhóm sử dụng chiến lược ensemble như trên, kết hợp tất cả các mô hình học đôi (pairwise learners) và mô hình single-table.
 Nếu tất cả các bảng nguồn đều hữu ích, chúng được kết hợp với trọng số bằng nhau.
 Nếu một bảng nguồn cung cấp nhiều thông tin hơn hẳn, mô hình sẽ ưu tiên bảng đó trong quá trình dự đoán.
 

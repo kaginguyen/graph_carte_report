@@ -4,17 +4,28 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2}Các Nghiên Cứu Liên Quan}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Cách Mô Hình CARTE Học từ Dữ Liệu Bảng}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Biểu Diễn Đồ Thị của Đối Tượng Bảng}{4}{}\protected@file@percent }
+\newlabel{sec:graph_representation}{{3.1}{4}{}{subsection.3.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces CARTE biểu diễn mỗi hàng của bảng dưới dạng một đồ thị hình sao (graphlet). Các nút lá chứa giá trị ô và tên cột tương ứng. Các đặc trưng nút được khởi tạo bằng mô hình ngôn ngữ, trong đó giá trị số được điều chỉnh bằng đặc trưng cột. Nút trung tâm, ban đầu là trung bình của các nút lá, đóng vai trò tổng hợp thông tin của graphlet.}}{5}{}\protected@file@percent }
 \newlabel{fig:graphlet_representation_of_tabular_entity}{{1}{5}{}{figure.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Tiền Huấn Luyện Mô Hình từ Cơ Sở Tri Thức Lớn}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Tinh Chỉnh cho Tác Vụ}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Suy luận trên dữ liệu bảng đơn}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Học chuyển giao từ một bảng nguồn sang bảng đích}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Học chung trên nhiều bảng}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Nghiên Cứu Thực Nghiệm}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Cài Đặt Thực Nghiệm}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Kết Quả trên Bảng Đơn}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Học Đa Bảng}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5}Bàn Luận và Kết Luận}{8}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces CARTE tiền huấn luyện bằng cách tạo graphlet từ một đồ thị tri thức lớn. Những graphlet này được đưa vào mạng nơ-ron để huấn luyện theo phương pháp tự giám sát, giúp mô hình học cách tổng hợp thông tin từ các bảng thông qua quan hệ giữa các cột.}}{6}{}\protected@file@percent }
+\newlabel{fig:carte_pretraining_process}{{2}{6}{}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces CARTE sử dụng các đồ thị làm đầu vào, với đặc trưng là các nút và cạnh được dùng trong lớp self-attention. Các lớp này cập nhật đặc trưng nút dựa trên thông tin cạnh và sử dụng attention mask để duy trì cấu trúc đồ thị. Lớp Tổng hợp \& Đọc trích xuất đặc trưng từ nút trung tâm (center node), và đầu ra cuối cùng được dùng để tính toán cho hàm mất mát đối lập (contrastive loss).}}{7}{}\protected@file@percent }
+\newlabel{fig:carte_architecture}{{3}{7}{}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 3 thành phần chính của cơ chế attention}}{8}{}\protected@file@percent }
+\newlabel{fig:architecture_attention_mechanic}{{4}{8}{}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Công thức Attention Score theo phương pháp scaled dot-product attention}}{8}{}\protected@file@percent }
+\newlabel{fig:attention_score}{{5}{8}{}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Kết quả của lớp attention.}}{9}{}\protected@file@percent }
+\newlabel{fig:attention_layers_output}{{6}{9}{}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Tinh Chỉnh cho Tác Vụ}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Suy luận trên dữ liệu bảng đơn}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Học chuyển giao từ một bảng nguồn sang bảng đích}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Học chung trên nhiều bảng}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Nghiên Cứu Thực Nghiệm}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Cài Đặt Thực Nghiệm}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Kết Quả trên Bảng Đơn}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Học Đa Bảng}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Bàn Luận và Kết Luận}{11}{}\protected@file@percent }
 \abx@aux@read@bbl@mdfivesum{76D65A242EC496C9B4361AF646FF12CB}
-\gdef \@abspage@last{8}
+\gdef \@abspage@last{11}
