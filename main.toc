@@ -4,9 +4,9 @@
 \contentsline {subsection}{\numberline {3.1}Biểu Diễn Đồ Thị của Đối Tượng Bảng}{4}{}%
 \contentsline {subsection}{\numberline {3.2}Tiền Huấn Luyện Mô Hình từ Cơ Sở Tri Thức Lớn}{5}{}%
 \contentsline {subsection}{\numberline {3.3}Tinh Chỉnh cho Tác Vụ}{6}{}%
-\contentsline {subsubsection}{\numberline {3.3.1}Suy luận trên dữ liệu bảng đơn}{6}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Suy luận trên dữ liệu bảng đơn}{7}{}%
 \contentsline {subsubsection}{\numberline {3.3.2}Học chuyển giao từ một bảng nguồn sang bảng đích}{7}{}%
-\contentsline {subsubsection}{\numberline {3.3.3}Học chung trên nhiều bảng}{7}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Học chung trên nhiều bảng}{8}{}%
 \contentsline {section}{\numberline {4}Nghiên Cứu Thực Nghiệm}{8}{}%
 \contentsline {subsection}{\numberline {4.1}Cài Đặt Thực Nghiệm}{8}{}%
 \contentsline {subsection}{\numberline {4.2}Kết Quả trên Bảng Đơn}{8}{}%
