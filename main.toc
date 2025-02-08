@@ -5,7 +5,7 @@
 \contentsline {subsection}{\numberline {3.2}Tiền Huấn Luyện Mô Hình từ Cơ Sở Tri Thức Lớn}{5}{}%
 \contentsline {subsection}{\numberline {3.3}Tinh Chỉnh cho Tác Vụ}{9}{}%
 \contentsline {subsubsection}{\numberline {3.3.1}Suy luận trên dữ liệu bảng đơn}{9}{}%
-\contentsline {subsubsection}{\numberline {3.3.2}Học chuyển giao từ một bảng nguồn sang bảng đích}{10}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Học chuyển giao từ một bảng nguồn sang bảng đích}{9}{}%
 \contentsline {subsubsection}{\numberline {3.3.3}Học chung trên nhiều bảng}{10}{}%
 \contentsline {section}{\numberline {4}Nghiên Cứu Thực Nghiệm}{11}{}%
 \contentsline {subsection}{\numberline {4.1}Cài Đặt Thực Nghiệm}{11}{}%

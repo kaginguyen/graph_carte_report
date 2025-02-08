@@ -136,77 +136,43 @@ Các yếu tố $W_Q, W_K, W_V$ trong Hình \ref{fig:architecture_attention_mech
 
 Để thiết kế hàm mất mát tương phản không giám sát (self-supervised contrastive loss), chúng ta áp dụng khung phương pháp từ một nghiên cứu khác. Cụ thể, đồ thị con gốc (original graphlet) và một phiên bản bị cắt bớt (truncation) được xem là mẫu dương (positives), trong khi các đồ thị con khác trong cùng một lô được coi là mẫu âm (negatives). Quá trình học dựa trên độ tương đồng cosin giữa các đầu ra của mạng, sau đó được đưa vào hàm mất mát InfoNCE, một kỹ thuật phổ biến trong học biểu diễn tương phản để tối ưu hóa khoảng cách giữa các mẫu dương và âm.
 
+
+
 \subsection{Tinh Chỉnh cho Tác Vụ}
-Trong quá trình fine-tuning cho một tác vụ cụ thể, CARTE chỉ tái sử dụng một phần của kiến trúc đã được tiền huấn luyện (như trong Hình 3). Cụ thể, mô hình giữ lại:
+Trong một tác vụ đầu ra cụ thể, quá trình tinh chỉnh CARTE chỉ sử dụng lại một phần của kiến trúc đã được huấn luyện trước (như minh họa trong Hình \ref{fig:carte_architecture}). Cụ thể, các lớp ban đầu xử lý nút và cạnh (khối màu xanh và đỏ) cùng với lớp "Tổng hợp \& Đọc ra" được giữ lại. Cách tiếp cận này có sự khác biệt so với nhiều phương pháp tinh chỉnh thông thường, nhưng nó xuất phát từ đặc điểm của mạng nơ-ron đồ thị.
 
-Các lớp ban đầu xử lý node và cạnh (các khối màu xanh và đỏ).
-Lớp “Aggregation \& Readout” tổng hợp thông tin từ các node và cạnh.
-Không giống như nhiều phương pháp fine-tuning khác, cách tiếp cận này dựa vào đặc điểm của mạng nơ-ron đồ thị (GNN). Lý do là vì các bảng dữ liệu trong bài toán downstream (sử dụng mô hình để giải quyết bài toán cụ thể) có đồ thị đơn giản hơn so với trong giai đoạn tiền huấn luyện:
-
-Đồ thị trong bài toán downstream có dạng ngôi sao (star-like structure, xem Hình 1), tức là một node trung tâm liên kết với các node còn lại.
-Cấu trúc đồ thị của bảng downstream ít đa dạng hơn so với YAGO, tập dữ liệu gốc dùng để huấn luyện CARTE.
-Số lượng biến rời rạc (cardinality) trong bảng downstream ít hơn, giúp mô hình dễ học hơn.
-Nếu sử dụng một kiến trúc quá sâu, thông tin đặc trưng của các node có thể bị làm mờ dần qua các lớp (hiện tượng over-smoothing, Chen et al., 2020a; Rusch et al., 2023, được phân tích trong Phụ lục C.4). Vì vậy, CARTE áp dụng một nguyên tắc phổ biến trong mô hình đồ thị:
-
-Số lớp chú ý (attention layers) được đặt bằng số bước quan hệ tối đa k-hop, với k = 1 trong trường hợp này.
-Bộ phân loại cuối cùng chỉ đơn giản là một mạng nơ-ron tuyến tính.
-Với mô hình cơ bản này, nhóm xem xét hai cách suy luận (inference) trên dữ liệu downstream:
+Thực tế, các thực thể trong bảng đầu ra có cấu trúc đồ thị đơn giản hơn so với giai đoạn huấn luyện ban đầu. Thứ nhất, chúng thường có dạng hình sao (Hình 1). Thứ hai, các bảng đầu ra có sự biến đổi cấu trúc đồ thị ít hơn và số lượng biến rời rạc cũng thấp hơn so với YAGO. Nếu kiến trúc quá sâu, các đặc trưng phân biệt có thể bị làm mờ trong biểu diễn đầu ra, dẫn đến hiện tượng làm mịn quá mức. Do đó, chúng tôi áp dụng một quy ước phổ biến trong mô hình đồ thị: số lớp attention được đặt bằng số bậc quan hệ tối đa, trong trường hợp này là $k=1$. Đối với bộ phân loại cuối cùng, các lớp tuyến tính được gắn trực tiếp vào mô hình. Khi tinh chỉnh mô hình nền, chúng tôi xem xét hai phương thức suy luận khác nhau.
 
 \subsubsection{Suy luận trên dữ liệu bảng đơn}
-Đây là trường hợp phổ biến nhất, trong đó chúng ta có một bảng dữ liệu duy nhất và cần dự đoán một biến mục tiêu (target variable). Trước khi biến đổi bảng thành đồ thị:
+Đây là kịch bản phổ biến, trong đó một bảng duy nhất được cung cấp với biến mục tiêu cần dự đoán. Trước khi chuyển đổi các thực thể bảng thành đồ thị, chúng tôi áp dụng biến đổi lũy thừa lên các biến số học nhằm cải thiện độ ổn định của mô hình. Biến đổi này đã được chứng minh hiệu quả trong nhiều nghiên cứu trước đây và giúp quá trình tinh chỉnh CARTE ổn định hơn.
 
-Biến số (numerical variables) được xử lý trước bằng phép biến đổi lũy thừa (power transform) (Yeo \& Johnson, 2000), giúp ổn định phân phối dữ liệu. Cách tiếp cận này đã chứng minh hiệu quả trong nhiều nghiên cứu trước đây (Hollmann et al., 2023; Cvetkov-Iliev et al., 2023).
-Để tăng độ chính xác và tránh overfitting, nhóm sử dụng chiến lược bagging (Breiman, 1996):
-
-\begin{itemize}
-    \item Tạo nhiều mô hình bằng cách sử dụng các tập train-validation khác nhau.
-    \item Dừng sớm (early stopping) dựa trên tập validation.
-    \item Dự đoán cuối cùng là trung bình của các đầu ra từ các mô hình trên.
-\end{itemize}
+Ngoài ra, chúng tôi áp dụng chiến lược bagging, trong đó nhiều mô hình được huấn luyện với các tập dữ liệu được phân chia huấn luyện-xác thực khác nhau để dừng sớm. Kết quả dự đoán cuối cùng được tính bằng cách lấy trung bình đầu ra của các mô hình này.
 
 \subsubsection{Học chuyển giao từ một bảng nguồn sang bảng đích}
-nhóm cũng áp dụng CARTE cho học chuyển giao (transfer learning), khi có một bảng nguồn $X_S$có thể hỗ trợ dự đoán trên bảng đích $X_T$. Trong nhiều trường hợp, bảng nguồn có nhiều dữ liệu huấn luyện hơn bảng đích.
+Chúng tôi cũng sử dụng CARTE trong các bài toán học chuyển giao, nơi có một bảng nguồn 
+$X_S$ hỗ trợ dự đoán trên bảng đích $X_T$. Đáng chú ý, bảng nguồn thường có số lượng mẫu huấn luyện lớn hơn so với bảng đích. Việc tinh chỉnh CARTE được thực hiện đồng thời trên cả hai bảng. Nhờ vào biểu diễn đồ thị, mô hình có thể xử lý tinh chỉnh chung mà không cần sự tương ứng giữa các cột của hai bảng. Tuy nhiên, kết quả đầu ra $y_S$ và $y_T$ của bảng nguồn và bảng đích cần phải có đặc điểm tương đồng.
 
-Quá trình fine-tuning trong học chuyển giao được thực hiện như sau:
+Để đảm bảo điều này, chúng tôi thực hiện một bước chuyển đổi trên $y_S$ để phù hợp với kỳ vọng toán học bậc nhất của $y_T$ bằng cách sử dụng phép biến đổi lũy thừa như trước đó, nhưng lần này áp dụng phép biến đổi nghịch đảo. Nếu bản chất của biến mục tiêu giữa bảng nguồn và bảng đích khác nhau (phân loại hoặc hồi quy), chúng tôi điều chỉnh $y_S$như sau:
 
-Huấn luyện CARTE trên cả hai bảng nguồn và đích cùng lúc.
+Nếu $y_T$ là một biến phân loại, chúng tôi nhị phân hóa biến hồi quy của bảng nguồn.
+Nếu $y_T$là một biến hồi quy, chúng tôi sử dụng biến phân loại của bảng nguồn, mã hóa nó dưới dạng {0,1} và chuẩn hóa theo phương pháp chuẩn.
+Quá trình tinh chỉnh CARTE tiếp tục bằng cách lấy các batch dữ liệu với tỷ lệ cố định giữa các dòng từ bảng nguồn và bảng đích (trong đó mỗi batch có kích thước 64, với 8 dòng từ bảng đích). Chúng tôi áp dụng chiến lược dừng sớm trên tập xác thực của bảng đích, đồng thời tiếp tục sử dụng phương pháp bagging để tạo ra nhiều mô hình con dựa trên các tập xác thực khác nhau và tính trung bình đầu ra.
 
-Do dữ liệu được biểu diễn dưới dạng đồ thị, việc fine-tuning có thể diễn ra mà không cần các cột giữa hai bảng phải khớp nhau.
-Tuy nhiên, nhóm yêu cầu rằng nhãn đầu ra $y_X$ và $y_T$ của bảng nguồn và đích phải có mối quan hệ tương tự.
-Điều chỉnh nhãn của bảng nguồn để phù hợp với bảng đích:
+Thường thì, quá trình dừng sớm diễn ra trước khi tất cả các điểm dữ liệu của bảng nguồn được sử dụng. Điều này giúp tránh hiện tượng overfitting vào dữ liệu nguồn, vì dữ liệu nguồn có thể không quan trọng bằng dữ liệu đích đối với việc dự đoán $y_T$. Các siêu tham số được sử dụng vẫn giữ nguyên như trong thiết lập với một bảng đơn lẻ.
+Vì chúng tôi chọn bảng nguồn khá linh hoạt từ dữ liệu có liên quan yếu, nên không phải lúc nào mô hình học cặp (pairwise learner) cũng cải thiện so với mô hình học trên một bảng đơn lẻ. Điều này xảy ra khi bảng nguồn không cung cấp đủ thông tin liên quan. Để khắc phục, chúng tôi kết hợp mô hình học cặp với mô hình học đơn lẻ bằng cách tổng hợp dự đoán của cả hai thông qua hàm softmax.
 
-Nếu $y_T$ là biến phân loại: chuyển đổi $y_S$ từ bài toán hồi quy thành phân loại nhị phân.
-Nếu $y_T$ là biến hồi quy: sử dụng nhãn phân loại nhị phân của bảng nguồn ({0,1}) và chuẩn hóa theo phương pháp standard scaling.
-Lấy mẫu dữ liệu trong quá trình huấn luyện:
-
-Với batch size 64, mỗi batch có 8 dòng từ bảng đích và phần còn lại từ bảng nguồn.
-Dừng sớm (early stopping) dựa trên tập validation của bảng đích.
-Tiếp tục sử dụng bagging, tức là xây dựng nhiều mô hình trên các tập validation khác nhau và lấy trung bình dự đoán.
-Kiểm soát việc quá khớp với bảng nguồn:
-
-Trong hầu hết các trường hợp, early stopping xảy ra trước khi tất cả dữ liệu của bảng nguồn được sử dụng.
-Điều này giúp tránh overfitting vào bảng nguồn, do dữ liệu của bảng nguồn có thể không quan trọng bằng dữ liệu của bảng đích để dự đoán $y_T$ .
-Kết hợp mô hình transfer learning với mô hình single-table:
-
-Khi bảng nguồn không chứa đủ thông tin hữu ích, mô hình học chuyển giao có thể không tốt hơn so với mô hình chỉ sử dụng bảng đích.
-nhóm sử dụng softmax ensemble để kết hợp hai mô hình này. Trọng số của softmax được tính dựa trên điểm dự đoán từ tập validation, được chuẩn hóa bằng độ lệch chuẩn giữa các mô hình để điều chỉnh nhiệt độ (temperature scaling).
+Trọng số trong softmax được xác định dựa trên điểm dự đoán từ tập xác thực nội bộ của các mô hình thành phần. Để điều chỉnh nhiệt độ của softmax, chúng tôi chia trọng số này cho độ lệch chuẩn giữa các mô hình, giúp cân bằng ảnh hưởng của từng mô hình trong tổ hợp.
 
 \subsubsection{Học chung trên nhiều bảng}
-Trong bài toán học chuyển giao, việc chọn bảng nguồn phù hợp đóng vai trò quan trọng. Nếu có nhiều bảng dữ liệu thuộc cùng một lĩnh vực hoặc tổ chức, CARTE có thể khai thác tất cả các bảng này để tìm ra thông tin hữu ích nhất.
+Mấu chốt của học chuyển giao, như đã đề cập, là tìm đúng bảng nguồn phù hợp. Nếu có nhiều bảng từ cùng một lĩnh vực hoặc tổ chức, CARTE có thể tận dụng tất cả để chọn lọc thông tin hữu ích nhất cho việc chuyển giao. Trong trường hợp này, bài toán được đặt ra với một bảng đích $X_T$ và một tập hợp các bảng nguồn \{$X_{S,1}, ..., X_{S,m}$\}.
 
-Giả sử có một bảng đích $X_T$ và tập hợp các bảng nguồn ${X_{S,1}, ..., X_{S,m}}$, nhóm tiến hành như sau:
+Quy trình huấn luyện như sau:
+\begin{itemize}
+    \item Xây dựng mô hình học đơn lẻ trên $X_T$.
+    \item Xây dựng từng mô hình học cặp giữa bảng đích $X_T$ và từng bảng nguồn $X_{S,i}$ bằng phương pháp học cặp đã mô tả ở trên.
+\end{itemize}
 
-Xây dựng từng mô hình học riêng lẻ:
-
-Trước tiên, huấn luyện mô hình single-table trên $X_T$.
-Sau đó, huấn luyện từng mô hình pairwise joint learner trên từng cặp ($X_T, X_{S,i}$).
-Ensemble để chọn mô hình tốt nhất:
-
-Không phải mọi cặp bảng đều mang lại thông tin hữu ích như nhau.
-nhóm sử dụng chiến lược ensemble như trên, kết hợp tất cả các mô hình học đôi (pairwise learners) và mô hình single-table.
-Nếu tất cả các bảng nguồn đều hữu ích, chúng được kết hợp với trọng số bằng nhau.
-Nếu một bảng nguồn cung cấp nhiều thông tin hơn hẳn, mô hình sẽ ưu tiên bảng đó trong quá trình dự đoán.
-
+Tuy nhiên, không phải mọi cặp bảng đều mang lại thông tin hữu ích như nhau. Do đó, để tìm tổ hợp dữ liệu tối ưu, chúng tôi sử dụng chiến lược tương tự: kết hợp tất cả các mô hình học cặp cùng với mô hình học đơn lẻ. Nếu tất cả các bảng nguồn đều tạo ra dự đoán tốt, chúng sẽ được kết hợp với trọng số bằng nhau. Ngược lại, nếu một bảng nguồn vượt trội hơn, kết quả dự đoán sẽ được neo vào bảng đó.
 
 
 \section{Nghiên Cứu Thực Nghiệm}
