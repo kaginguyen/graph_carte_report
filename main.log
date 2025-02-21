@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.16)  21 FEB 2025 13:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.16)  21 FEB 2025 15:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -598,8 +598,64 @@ Package pdftex.def Info: images/attention_layers_output.png  used on input line 
 [10{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
 [11]
+<images/carte_performance_comparison.png, id=62, 486.31688pt x 293.59688pt>
+File: images/carte_performance_comparison.png Graphic file (type png)
+<use images/carte_performance_comparison.png>
+Package pdftex.def Info: images/carte_performance_comparison.png  used on input line 198.
+(pdftex.def)             Requested size: 340.4195pt x 205.5164pt.
+<images/carte_robust_to_missing_value.png, id=63, 247.42438pt x 169.13188pt>
+File: images/carte_robust_to_missing_value.png Graphic file (type png)
+<use images/carte_robust_to_missing_value.png>
+Package pdftex.def Info: images/carte_robust_to_missing_value.png  used on input line 209.
+(pdftex.def)             Requested size: 197.93976pt x 135.30568pt.
+<images/carte_computation_time.png, id=64, 248.42813pt x 82.80937pt>
+File: images/carte_computation_time.png Graphic file (type png)
+<use images/carte_computation_time.png>
+Package pdftex.def Info: images/carte_computation_time.png  used on input line 218.
+(pdftex.def)             Requested size: 198.74277pt x 66.24757pt.
 
-[12] (./main.aux)
+
+[12]
+
+[13 <./images/carte_performance_comparison.png> <./images/carte_robust_to_missing_value.png>]
+<images/carte_entity_matching_not_required.png, id=74, 231.86626pt x 153.57375pt>
+File: images/carte_entity_matching_not_required.png Graphic file (type png)
+<use images/carte_entity_matching_not_required.png>
+Package pdftex.def Info: images/carte_entity_matching_not_required.png  used on input line 231.
+(pdftex.def)             Requested size: 185.49324pt x 122.85915pt.
+
+
+[14 <./images/carte_computation_time.png> <./images/carte_entity_matching_not_required.png>]
+<images/carte_vs_tabllm_dataset.png, id=80, 239.39438pt x 75.78313pt>
+File: images/carte_vs_tabllm_dataset.png Graphic file (type png)
+<use images/carte_vs_tabllm_dataset.png>
+Package pdftex.def Info: images/carte_vs_tabllm_dataset.png  used on input line 240.
+(pdftex.def)             Requested size: 191.51575pt x 60.62657pt.
+<images/carte_baseline_comparision.png, id=81, 188.705pt x 57.71562pt>
+File: images/carte_baseline_comparision.png Graphic file (type png)
+<use images/carte_baseline_comparision.png>
+Package pdftex.def Info: images/carte_baseline_comparision.png  used on input line 247.
+(pdftex.def)             Requested size: 150.96419pt x 46.17255pt.
+
+
+[15 <./images/carte_vs_tabllm_dataset.png> <./images/carte_baseline_comparision.png>]
+<images/carte_schema_matching_not_required.png, id=87, 230.8625pt x 280.04625pt>
+File: images/carte_schema_matching_not_required.png Graphic file (type png)
+<use images/carte_schema_matching_not_required.png>
+Package pdftex.def Info: images/carte_schema_matching_not_required.png  used on input line 263.
+(pdftex.def)             Requested size: 161.60263pt x 196.03102pt.
+<images/carte_benefits_from_additional_source_tables.png, id=88, 241.40187pt x 155.58125pt>
+File: images/carte_benefits_from_additional_source_tables.png Graphic file (type png)
+<use images/carte_benefits_from_additional_source_tables.png>
+Package pdftex.def Info: images/carte_benefits_from_additional_source_tables.png  used on input line 274.
+(pdftex.def)             Requested size: 193.12175pt x 124.46515pt.
+
+
+[16 <./images/carte_schema_matching_not_required.png>]
+
+[17 <./images/carte_benefits_from_additional_source_tables.png>]
+
+[18] (./main.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
@@ -609,18 +665,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10177 strings out of 473362
- 191698 string characters out of 5720989
- 1009723 words of memory out of 5000000
- 33197 multiletter control sequences out of 15000+600000
+ 10257 strings out of 473362
+ 195306 string characters out of 5720989
+ 1010917 words of memory out of 5000000
+ 33277 multiletter control sequences out of 15000+600000
  568260 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,7n,81p,1554b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb>
-Output written on main.pdf (12 pages, 496945 bytes).
+Output written on main.pdf (18 pages, 933690 bytes).
 PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 152 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
