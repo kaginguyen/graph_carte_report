@@ -9,6 +9,6 @@
 \contentsline {subsubsection}{\numberline {3.3.3}Học chung trên nhiều bảng}{10}{}%
 \contentsline {section}{\numberline {4}Nghiên Cứu Thực Nghiệm}{11}{}%
 \contentsline {subsection}{\numberline {4.1}Cài Đặt Thực Nghiệm}{11}{}%
-\contentsline {subsection}{\numberline {4.2}Kết Quả trên Bảng Đơn}{11}{}%
-\contentsline {subsection}{\numberline {4.3}Học Đa Bảng}{11}{}%
-\contentsline {section}{\numberline {5}Bàn Luận và Kết Luận}{11}{}%
+\contentsline {subsection}{\numberline {4.2}Kết Quả trên Bảng Đơn}{12}{}%
+\contentsline {subsection}{\numberline {4.3}Học Đa Bảng}{12}{}%
+\contentsline {section}{\numberline {5}Bàn Luận và Kết Luận}{12}{}%
