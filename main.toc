@@ -11,4 +11,4 @@
 \contentsline {subsection}{\numberline {4.1}Cài Đặt Thực Nghiệm}{11}{}%
 \contentsline {subsection}{\numberline {4.2}Kết Quả trên Bảng Đơn}{12}{}%
 \contentsline {subsection}{\numberline {4.3}Học Đa Bảng}{15}{}%
-\contentsline {section}{\numberline {5}Bàn Luận và Kết Luận}{17}{}%
+\contentsline {section}{\numberline {5}Bàn Luận và Kết Luận}{16}{}%

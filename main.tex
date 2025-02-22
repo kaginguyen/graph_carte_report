@@ -190,7 +190,7 @@ Trong bài báo, nhóm nghiên cứu đánh giá và so sánh với nhiều phư
 
 
 \subsection{Kết Quả trên Bảng Đơn} 
-Trong mảng học trên bảng dữ liệu đơn thì CARTE vượt trội so với các phương pháp khác. Hình \ref{fig:carte_performance_comparison} so sánh hiệu suất trong tác vụ dự đoán trên các bộ dữ liệu khác nhau và kết quả cho thấy CARTE luôn đạt hiệu suất cao hơn so với các phương pháp thay thế, bất kể kích thước mẫu. Điều này đúng cả khi sử dụng điểm số chuẩn hóa hoặc sơ đồ sự khác biệt có ý nghĩa thống kê, được kiểm tra bằng phương pháp Conover sau khi thực hiện kiểm định Friedman.
+Trong mảng học trên bảng dữ liệu đơn thì CARTE vượt trội so với các phương pháp khác. Hình \ref{fig:carte_performance_comparison} so sánh hiệu suất trong tác vụ dự đoán trên các bộ dữ liệu khác nhau và kết quả cho thấy CARTE luôn đạt hiệu suất cao hơn so với các phương pháp thay thế, bất kể kích thước mẫu.
 
 \begin{figure} 
     \centering
@@ -199,9 +199,7 @@ Trong mảng học trên bảng dữ liệu đơn thì CARTE vượt trội so v
     \label{fig:carte_performance_comparison}
 \end{figure}
 
-Một điểm quan trọng khác là chiến lược bagging mà CARTE sử dụng cũng có tác động tích cực đến các mô hình mạng nơ-ron. Việc áp dụng bagging với các tập huấn luyện/kiểm định khác nhau để dừng sớm có thể mang lại lợi ích cho học sâu nói chung. Phụ lục C.1 cung cấp kết quả đầy đủ của CARTE cùng với 42 mô hình so sánh.
-
-Khi gặp giá trị bị thiếu, CARTE loại bỏ các cột có dữ liệu thiếu trong bước xây dựng đồ thị. Ví dụ, nếu một điểm dữ liệu có một giá trị bị thiếu trong bảng gồm 10 cột, thì sau khi xây dựng đồ thị, điểm đó sẽ có chín nút lá.
+Một điểm quan trọng là chiến lược bagging mà CARTE sử dụng có tác động tích cực đến các mô hình mạng nơ-ron. Việc áp dụng bagging với các tập huấn luyện/kiểm định khác nhau để dừng sớm có thể mang lại lợi ích cho học sâu nói chung.
 
 \begin{figure} 
     \centering
@@ -210,7 +208,7 @@ Khi gặp giá trị bị thiếu, CARTE loại bỏ các cột có dữ liệu 
     \label{fig:carte_robust_to_missing_value}
 \end{figure}
 
-Hình \ref{fig:carte_robust_to_missing_value} so sánh mức độ suy giảm hiệu suất (tính theo phần trăm) và điểm số chuẩn hóa (so với Hình \ref{fig:carte_performance_comparison}) giữa CARTE và một số mô hình cây quyết định có khả năng xử lý dữ liệu thiếu. Trong thí nghiệm, nhóm đã ngẫu nhiên loại bỏ một số đặc trưng của từng mẫu (bao gồm cả tập huấn luyện và kiểm tra) với tỷ lệ 10\% và 30\%. Kết quả cho thấy CARTE vẫn duy trì hiệu suất vượt trội so với các mô hình đối chứng, ngay cả khi dữ liệu bị thiếu.
+Khi gặp giá trị bị thiếu, CARTE loại bỏ các cột có dữ liệu thiếu trong bước xây dựng đồ thị. Ví dụ, nếu một điểm dữ liệu có một giá trị bị thiếu trong bảng gồm 10 cột, thì sau khi xây dựng đồ thị, điểm đó sẽ có chín nút lá. Hình \ref{fig:carte_robust_to_missing_value} so sánh mức độ suy giảm hiệu suất (tính theo phần trăm) và điểm số chuẩn hóa (so với Hình \ref{fig:carte_performance_comparison}) giữa CARTE và một số mô hình cây quyết định có khả năng xử lý dữ liệu thiếu. Trong thí nghiệm thì nhóm đã ngẫu nhiên loại bỏ một số đặc trưng của từng mẫu (bao gồm cả tập huấn luyện và kiểm tra) với tỷ lệ 10\% và 30\% và kết quả cho thấy CARTE vẫn duy trì hiệu suất vượt trội so với các mô hình cơ sở khác.
 
 \begin{figure} 
     \centering
@@ -221,18 +219,16 @@ Hình \ref{fig:carte_robust_to_missing_value} so sánh mức độ suy giảm hi
 
 Bảng \ref{fig:carte_computation_time} thể hiện thời gian tính toán trung bình (tính bằng giây) của bốn mô hình hàng đầu. Hiệu suất dự đoán mạnh mẽ của CARTE đi kèm với chi phí tính toán cao hơn, và sự khác biệt này càng lớn khi kích thước tập huấn luyện tăng lên. Điều này cho thấy cần có những tối ưu hóa bổ sung để giảm chi phí tính toán.
 
-Một giả thuyết giải thích hiệu suất cao của CARTE là mô hình này đã tích hợp thông tin từ nhiều đối tượng nhờ được huấn luyện trước trên cơ sở tri thức YAGO. Tuy nhiên, trong một bảng dữ liệu cụ thể, cách viết tên đối tượng có thể khác nhau, chẳng hạn “Londres” thay vì “London”. Điều này đặt ra câu hỏi liệu CARTE có thể chuyển giao thông tin một cách hiệu quả khi cách biểu diễn chuỗi của đối tượng thay đổi hay không. Trong một số trường hợp, đối sánh chuỗi là cần thiết, chẳng hạn khi sử dụng các nhúng véc-tơ của đối tượng như KEN embeddings.
-
-Nhóm đã thực hiện đối sánh thực thể thủ công trên bốn bộ dữ liệu: nhân viên công ty, phim ảnh, tai nạn giao thông tại Mỹ và bầu cử Mỹ. Các thực thể trong dữ liệu này được liên kết với thực thể tương ứng trong cơ sở tri thức YAGO.
+Một giả thuyết giải thích hiệu suất cao của CARTE là mô hình này đã tích hợp thông tin từ nhiều đối tượng nhờ được huấn luyện trước trên cơ sở tri thức YAGO. Tuy nhiên, trong một bảng dữ liệu cụ thể, cách viết tên đối tượng có thể khác nhau, chẳng hạn "Londres" thay vì "London". Điều này đặt ra câu hỏi liệu CARTE có thể chuyển giao thông tin một cách hiệu quả khi cách biểu diễn chuỗi của đối tượng thay đổi hay không. Trong một số trường hợp, đối sánh chuỗi là cần thiết, chẳng hạn khi sử dụng các nhúng véc-tơ của đối tượng như KEN embeddings.
 
 \begin{figure} 
     \centering
     \includegraphics[scale = 0.8]{carte_entity_matching_not_required.png}
-    \caption{CARTE không yêu cầu đối sánh thực thể, và các thực thể trong bài toán không cần xuất hiện trong YAGO. Nhóm đánh giá CARTE và KEN trên toàn bộ tập dữ liệu cũng như phiên bản rút gọn chỉ chứa các thực thể có trong YAGO. Khi sử dụng KEN để bổ sung thông tin, CatBoost được chọn làm bộ ước lượng, với các thực thể không khớp bị thay thế bằng giá trị thiếu. Kết quả cho thấy KEN giúp cải thiện hiệu suất của CatBoost trên các thực thể trong YAGO, xác nhận giá trị gia tăng từ thông tin nền tảng.}
+    \caption{CARTE không yêu cầu đối sánh thực thể, và các thực thể trong bài toán không cần xuất hiện trong YAGO. Nhóm đánh giá CARTE và KEN trên toàn bộ tập dữ liệu cũng như phiên bản rút gọn chỉ chứa các thực thể có trong YAGO. Khi sử dụng KEN để bổ sung thông tin, CatBoost được chọn làm bộ ước lượng, với các thực thể không khớp bị thay thế bằng giá trị thiếu. Kết quả cho thấy KEN giúp cải thiện hiệu suất của CatBoost trên các thực thể trong YAGO, xác nhận giá trị của việc bổ sung từ thông tin nền.}
     \label{fig:carte_entity_matching_not_required}
 \end{figure}
 
-Hình \ref{fig:carte_entity_matching_not_required} cho thấy rằng trong khi KEN yêu cầu đối sánh thực thể để đạt hiệu suất tốt, CARTE vẫn duy trì độ chính xác cao nhờ vào mô hình hóa ở cấp độ chuỗi. Điều này giúp CARTE trở nên linh hoạt hơn khi xử lý các biến thể khác nhau của thực thể, bất kể sử dụng thực thể đã được đối sánh thủ công hay dữ liệu gốc ban đầu. Các thử nghiệm loại bỏ thành phần (ablation study) cũng xác nhận tầm quan trọng của biểu diễn chuỗi, không chỉ giúp duy trì tính nhất quán mà còn nắm bắt được sự tương đồng về ngữ nghĩa (xem Phụ lục Hình 10).
+Nhóm đã thực hiện đối sánh thực thể thủ công trên bốn bộ dữ liệu: "company employees", "movies", "US accidents", và "US election". Các thực thể trong dữ liệu này được liên kết với thực thể tương ứng trong cơ sở tri thức YAGO. Hình \ref{fig:carte_entity_matching_not_required} cho thấy rằng trong khi KEN yêu cầu đối sánh thực thể để đạt hiệu suất tốt, CARTE vẫn duy trì độ chính xác cao nhờ vào mô hình hóa ở cấp độ chuỗi. Điều này giúp CARTE trở nên linh hoạt hơn khi xử lý các biến thể khác nhau của thực thể, bất kể sử dụng thực thể đã được đối sánh thủ công hay dữ liệu gốc ban đầu. 
 
 \begin{figure} 
     \centering
@@ -248,10 +244,10 @@ Hình \ref{fig:carte_entity_matching_not_required} cho thấy rằng trong khi K
     \label{fig:carte_baseline_comparision}
 \end{figure}
 
-Nhóm đã so sánh CARTE với ba mô hình đối chứng trên chín bộ dữ liệu thuộc TabLLM. So với các bộ dữ liệu trong Hình \ref{fig:carte_performance_comparison}, tập dữ liệu của TabLLM có tỷ lệ cao hơn các đặc trưng dạng số và ít đặc trưng phân loại có nhiều giá trị (xem Hình \ref{fig:carte_vs_tabllm_dataset}). Hình \ref{fig:carte_baseline_comparision} thể hiện sơ đồ sự khác biệt có ý nghĩa thống kê giữa các mô hình. Trong những điều kiện này, TabPFN cho thấy hiệu suất mạnh mẽ. Tuy nhiên, dù được thiết kế để xử lý cả dữ liệu dạng số và chuỗi, CARTE vẫn đạt được kết quả cạnh tranh.
+Nhóm nghiên cứu đã so sánh CARTE với ba mô hình cơ sở trên chín bộ dữ liệu thuộc TabLLM. So với các bộ dữ liệu trong Hình \ref{fig:carte_performance_comparison}, tập dữ liệu của TabLLM có tỷ lệ hiệu quả cao hơn các đặc trưng dạng số và ít đặc trưng phân loại có nhiều giá trị (xem Hình \ref{fig:carte_vs_tabllm_dataset}). Hình \ref{fig:carte_baseline_comparision} thể hiện sơ đồ sự khác biệt có ý nghĩa thống kê giữa các mô hình. Trong những điều kiện này, TabPFN cho thấy hiệu suất mạnh mẽ. Tuy nhiên, dù được thiết kế để xử lý cả dữ liệu dạng số và chuỗi, CARTE vẫn đạt được kết quả cạnh tranh.
 
 \subsection{Học Đa Bảng}
-Nhóm đã nghiên cứu khả năng học trên nhiều bảng dữ liệu mà không có sự tương ứng rõ ràng giữa các cột. Các bảng này được lấy từ nhiều nguồn khác nhau, phản ánh cùng một chủ đề tổng quát (chẳng hạn như giá xe đạp, đánh giá nhà hàng) nhưng không có cấu trúc đồng nhất. Trong bộ dữ liệu gồm 51 bảng, nhóm đã xác định các nhóm có nội dung tương tự dù đến từ các nguồn khác nhau.
+Nhóm đã nghiên cứu khả năng học trên nhiều bảng dữ liệu mà không có sự tương quang rõ ràng giữa các cột. Các bảng này được lấy từ nhiều nguồn khác nhau không có cấu trúc đồng nhất nhưng phản ánh cùng một chủ đề tổng quát, như giá xe đạp, đánh giá nhà hàng. Trong bộ dữ liệu gồm 51 bảng, nhóm đã xác định các bộ có nội dung tương tự dù đến từ các nguồn khác nhau.
 
 Trong bối cảnh này, CARTE và S-LLM có thể được sử dụng trực tiếp, vì cả hai đều sử dụng biểu diễn từ vựng mở để ánh xạ các mục nhập vào không gian nhúng. Tuy nhiên, chỉ phiên bản EN (Embed Numerical) của S-LLM mới hoạt động tốt, trong khi phiên bản CN (Concat Numerical) yêu cầu sự tương ứng giữa các cột số.
 
@@ -264,7 +260,7 @@ Với CatBoost, do có khả năng xử lý dữ liệu thiếu một cách tự
     \label{fig:carte_schema_matching_not_required}
 \end{figure}
 
-Hình \ref{fig:carte_schema_matching_not_required} trình bày kết quả của việc học chuyển giao giữa hai bảng dữ liệu. Kết quả cho thấy, tất cả phương pháp đều có lợi từ học chuyển giao (đường đứt nét, đại diện cho việc học chỉ trên bảng mục tiêu, luôn có hiệu suất thấp hơn). Tuy nhiên, chỉ có CARTE mang lại cải thiện ổn định mà không cần đối sánh cột thủ công.
+Hình \ref{fig:carte_schema_matching_not_required} trình bày kết quả của việc học chuyển giao giữa hai bảng dữ liệu và kết quả là tất cả phương pháp đều có lợi từ học chuyển giao (đường đứt nét, đại diện cho việc học chỉ trên bảng mục tiêu, luôn có hiệu suất thấp hơn). Tuy nhiên, chỉ có CARTE mang lại cải thiện ổn định mà không cần đối sánh cột thủ công.
 
 Đối với CatBoost, việc đối sánh cột (đường chấm) đóng vai trò quan trọng, trong khi với các phương pháp khác thì không. Đối với S-LLM, lợi ích của học chuyển giao giảm nhanh khi số lượng mẫu huấn luyện tăng lên. Nhìn chung, CARTE có thể học từ nhiều bảng khác nhau mà không cần đối sánh lược đồ, đồng thời vẫn mang lại hiệu suất ổn định trên bảng mục tiêu.
 
@@ -275,25 +271,20 @@ Hình \ref{fig:carte_schema_matching_not_required} trình bày kết quả của
     \label{fig:carte_benefits_from_additional_source_tables}
 \end{figure}
 
-Một trong những thách thức của học chuyển giao là xác định được các bảng dữ liệu nguồn phù hợp. Hình \ref{fig:carte_benefits_from_additional_source_tables} phân tích tác động của việc bổ sung thêm bảng dữ liệu nguồn, với tối đa bốn bảng (một bảng mục tiêu và ba bảng nguồn, tổng cộng 245 trường hợp).
-
-Kết quả cho thấy CARTE có lợi khi có nhiều bảng nguồn hơn: không chỉ cải thiện hiệu suất trung bình mà còn làm giảm độ biến động trong kết quả. Nói cách khác, việc bổ sung thêm bảng nguồn làm tăng khả năng tìm được bảng hữu ích, giúp giảm thiểu tình huống xấu nhất trong quá trình học.
+Một trong những thách thức của học chuyển giao là xác định được các bảng dữ liệu nguồn phù hợp. Hình \ref{fig:carte_benefits_from_additional_source_tables} phân tích tác động của việc bổ sung thêm bảng dữ liệu nguồn, với tối đa bốn bảng (một bảng mục tiêu và ba bảng nguồn, tổng cộng 245 trường hợp). Kết quả cho thấy CARTE có lợi khi có nhiều bảng nguồn hơn: không chỉ cải thiện hiệu suất trung bình mà còn làm giảm độ biến động trong kết quả. Nói cách khác, việc bổ sung thêm bảng nguồn làm tăng khả năng tìm được bảng hữu ích, giúp giảm thiểu tình huống xấu nhất trong quá trình học.
 
 \section{Bàn Luận và Kết Luận}
-Vai trò của chuỗi ký tự và số trong bảng dữ liệu
-Nghiên cứu của nhóm nhấn mạnh tầm quan trọng của chuỗi ký tự (strings) trong dữ liệu bảng. Mặc dù chúng thường bị xem nhẹ trong học máy trên dữ liệu bảng—như Bảng 3 cho thấy, hầu hết tập dữ liệu đều thiên về số hoặc các danh mục có số lượng giá trị thấp—nhưng chúng lại đóng vai trò trung tâm trong nghiên cứu cơ sở dữ liệu, nơi tập trung vào các giá trị rời rạc. So với các mô hình học máy trên bảng phổ biến như cây quyết định hay mạng nơ-ron (bao gồm TabPFN), điểm mạnh của CARTE nằm ở khả năng xử lý chuỗi ký tự.
+Nghiên cứu của nhóm nhấn mạnh tầm quan trọng của chuỗi ký tự (strings) trong dữ liệu bảng. Mặc dù chúng thường bị xem nhẹ trong học máy trên dữ liệu bảng—như Hình \ref{fig:carte_vs_tabllm_dataset} cho thấy, hầu hết tập dữ liệu đều thiên về số hoặc các danh mục có số lượng giá trị thấp—nhưng chúng lại đóng vai trò trung tâm trong nghiên cứu cơ sở dữ liệu, nơi tập trung vào các giá trị rời rạc. So với các mô hình học máy trên bảng phổ biến như cây quyết định hay mạng nơ-ron (bao gồm TabPFN), điểm mạnh của CARTE nằm ở khả năng xử lý chuỗi ký tự.
 
-Việc tiền xử lý chuỗi trong TableVectorizer của thư viện skrub giúp cải thiện đáng kể các mô hình nền tảng (như minh họa trong Hình 9). Trong khi đó, các mô hình ngôn ngữ lớn (LLM) lại tập trung vào chuỗi ký tự, cho phép tiền huấn luyện trên kho dữ liệu khổng lồ. Chúng mang lại hiệu quả cao trong việc xử lý chuỗi nhưng cần kết hợp với phương pháp dựa trên cây quyết định để xử lý số liệu (như mô hình S-LLM-CN-XGB trong bộ đánh giá của nhóm). CARTE được thiết kế để xử lý hiệu quả cả chuỗi ký tự và số liệu.
+Việc tiền xử lý chuỗi trong TableVectorizer của thư viện skrub giúp cải thiện đáng kể các mô hình nền tảng. Trong khi đó, các mô hình ngôn ngữ lớn (LLM) lại tập trung vào chuỗi ký tự, cho phép tiền huấn luyện trên kho dữ liệu khổng lồ. Chúng mang lại hiệu quả cao trong việc xử lý chuỗi nhưng cần kết hợp với phương pháp dựa trên cây quyết định để xử lý số liệu (như mô hình S-LLM-CN-XGB trong bộ đánh giá của nhóm). CARTE được thiết kế để xử lý hiệu quả cả chuỗi ký tự và số liệu.
 
-Cải thiện hiệu suất nhờ kiến trúc tối ưu
 Thay vì coi mỗi giá trị trong bảng như một đặc trưng độc lập trong ma trận dữ liệu, CARTE mô hình hóa chúng dựa trên ngữ cảnh xung quanh—bao gồm tên cột và các giá trị lân cận—đồng thời sử dụng phương pháp nhúng linh hoạt cho chuỗi ký tự. Cách tiếp cận này giúp mô hình tạo ra biểu diễn nhất quán cho các bảng dữ liệu có cấu trúc khác nhau, mở ra khả năng tiền huấn luyện trên nhiều bảng nền tảng và tinh chỉnh để áp dụng vào các bài toán thực tế mà không cần các thực thể hoặc lược đồ đồng nhất.
 
 Kết quả thực nghiệm cho thấy, sau khi tiền huấn luyện trên một kho tri thức lớn, mô hình thu được mang lại lợi ích đáng kể cho các tác vụ phân tích dữ liệu, vượt trội hơn so với nhiều phương pháp nền tảng khác, cả trong học trên một bảng đơn lẻ lẫn chuyển giao học tập trên các bảng không hoàn toàn tương đồng. CARTE còn có thể tận dụng dữ liệu từ các bảng thực tế ngoài môi trường nghiên cứu, một lĩnh vực chưa được khai thác sâu trước đây.
 
-Hướng tới mô hình nền tảng cho dữ liệu bảng
 Tiền huấn luyện là yếu tố quan trọng thúc đẩy sự phát triển của học sâu trong xử lý hình ảnh và ngôn ngữ tự nhiên. Nhóm kỳ vọng rằng những ý tưởng từ CARTE sẽ giúp mang lại lợi ích tương tự cho học máy trên dữ liệu bảng, hướng đến việc xây dựng các mô hình nền tảng mạnh mẽ cho loại dữ liệu này.
 
-Để đạt được điều đó, cần tiếp tục nghiên cứu và cải tiến kiến trúc, bao gồm: tối ưu hóa khả năng huấn luyện trên quy mô dữ liệu lớn hơn, tinh chỉnh biểu diễn số liệu theo các phương pháp tiên tiến như của Gorishniy et al. (2022), khai thác thêm thông tin huấn luyện và cơ chế chú ý mạnh mẽ như trong các mô hình ngôn ngữ lớn, cũng như kết hợp với phương pháp meta-learning từ TabPFN, vốn tỏ ra hiệu quả trên các bảng dữ liệu chứa nhiều số liệu.
+Để đạt được điều đó, cần tiếp tục nghiên cứu và cải tiến kiến trúc, bao gồm: tối ưu hóa khả năng huấn luyện trên quy mô dữ liệu lớn hơn, tinh chỉnh biểu diễn số liệu theo các phương pháp tiên tiến hơn, khai thác thêm thông tin huấn luyện và cơ chế chú ý mạnh mẽ như trong các mô hình ngôn ngữ lớn, cũng như kết hợp với phương pháp meta-learning từ TabPFN, vốn tỏ ra hiệu quả trên các bảng dữ liệu chứa nhiều số liệu.
 
 % \printbibliography
 
