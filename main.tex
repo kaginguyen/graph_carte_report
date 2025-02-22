@@ -174,23 +174,23 @@ Không phải mọi cặp bảng đều mang lại thông tin hữu ích như nh
 
 \section{Nghiên Cứu Thực Nghiệm}
 \subsection{Cài Đặt Thực Nghiệm}
-nhóm sử dụng 51 tập dữ liệu dạng bảng, trong đó có 40 tập dành cho bài toán hồi quy và 11 tập dành cho bài toán phân loại. Các tập dữ liệu này được thu thập từ nhiều nguồn khác nhau, chủ yếu từ các nghiên cứu trước đây về học máy và các cuộc thi trên Kaggle. Chúng bao gồm nhiều chủ đề liên quan đến xã hội và kinh doanh, chẳng hạn như tai nạn, bầu cử, tiền lương, thực phẩm, nhà hàng, v.v. nhóm chọn các tập dữ liệu đại diện cho các ứng dụng khoa học dữ liệu hiện đại—các bảng có cột ý nghĩa và giá trị rời rạc—khác với nhiều tập dữ liệu từ UCI. Danh sách cụ thể của các tập dữ liệu được cung cấp trong Phụ lục B.
+Trong nghiên cứu này nhóm đã sử dụng 51 tập dữ liệu dạng bảng, trong đó có 40 tập dành cho bài toán hồi quy và 11 tập dành cho bài toán phân loại. Các tập dữ liệu này được thu thập từ nhiều nguồn khác nhau, chủ yếu từ các nghiên cứu trước đây về học máy và các cuộc thi trên Kaggle gồm nhiều chủ đề liên quan đến xã hội và kinh doanh, chẳng hạn như tai nạn, bầu cử, tiền lương, thực phẩm, nhà hàng, ... Các tập dữ liệu được chọn có thể nói là đại diện cho các ứng dụng khoa học dữ liệu hiện đại, với các bảng có cột có ý nghĩa và các giá trị rời rạc.
 
-nhóm đánh giá nhiều phương pháp khác nhau, với các ký hiệu viết tắt như sau:
+Trong bài báo, nhóm nghiên cứu đánh giá và so sánh với nhiều phương pháp cơ sở khác nhau, chi tiết như danh sách sau: 
 
 \begin{itemize}
     \item CatBoost: Một thuật toán cây tăng cường độ dốc (gradient boosting) phổ biến để học trên dữ liệu dạng bảng. Các đặc trưng dạng văn bản được xử lý dưới dạng dữ liệu phân loại, mã hóa bằng phương pháp mã hóa phân loại của CatBoost—một phiên bản cải tiến của phương pháp mã hóa mục tiêu.
-    \item TabVec: Sử dụng bộ TableVectorizer từ thư viện Skrub để chuyển đổi bảng có dữ liệu dạng chuỗi thành mảng số. Các cột có ít giá trị phân loại được mã hóa one-hot, trong khi các cột có nhiều giá trị phân loại được mã hóa bằng bộ mã hóa Gamma-Poisson, giúp trích xuất danh mục tiềm ẩn từ các chuỗi con. Với các mô hình không dựa trên cây, các giá trị thiếu được thay thế bằng trung bình đối với đặc trưng số và được coi là một danh mục riêng đối với đặc trưng phân loại. Với mô hình mạng nơ-ron, dữ liệu được chuẩn hóa về khoảng [0, 1] bằng phương pháp min-max.
+    \item TabVec: Sử dụng bộ TableVectorizer từ thư viện Skrub để mã hóa các bảng có dữ liệu dạng chuỗi thành mảng số. Các cột có ít giá trị phân loại được mã hóa one-hot, trong khi các cột có nhiều giá trị phân loại được mã hóa bằng bộ mã hóa Gamma-Poisson. Với các mô hình không dựa trên cây, các giá trị bị thiếu được thay thế bằng giá trị trung bình nếu là đặc trưng số, và được coi là một nhóm riêng đối với đặc trưng phân loại. Với mô hình mạng nơ-ron, dữ liệu được chuẩn hóa về khoảng [0, 1] bằng phương pháp min-max.
     \item XGB, HGB, RF: Các mô hình cây quyết định, bao gồm XGBoost, HistGradientBoosting và Random Forest (từ thư viện scikit-learn).
-    \item MLP và ResNet: Mạng nơ-ron đa tầng (MLP) và phiên bản mở rộng của nó với các lớp chuẩn hóa (layer norm/batch norm) và kết nối tắt (skip-connections).
+    \item MLP và ResNet: Mạng nơ-ron đa tầng (MLP) và phiên bản mở rộng của nó với các lớp chuẩn hóa (layer norm/batch norm) và kết nối tắt (skip-connections) của ResNet.
     \item Ridge và Logistic: Các mô hình tuyến tính, bao gồm hồi quy Ridge và hồi quy Logistic, được áp dụng cho các bài toán hồi quy và phân loại.
-    \item S-LLM: Dựa trên ý tưởng từ TabLLM, nhóm thử nghiệm cách mã hóa từng hàng dữ liệu bằng một mô hình ngôn ngữ lớn (LLM). Cụ thể, mỗi hàng được biểu diễn dưới dạng một câu và mã hóa bằng mô hình intfloat/e5-small-v2 từ HuggingFace. Khác với TabLLM, đầu ra được chuyển vào mô hình XGB để học cả bài toán hồi quy và phân loại. Với dữ liệu số, nhóm thử nghiệm hai cách xử lý: hoặc nối trực tiếp vào đặc trưng đầu vào (CN), hoặc chuyển đổi thành chuỗi trước khi đưa vào LLM (EN).
-    \item TabPFN: Một mô hình transformer được huấn luyện trước trên dữ liệu tổng hợp, giúp dự đoán cho các tập dữ liệu nhỏ chỉ với một lần suy luận. Các đặc trưng văn bản được xử lý dưới dạng phân loại và mã hóa bằng phương pháp mã hóa mục tiêu.
+    \item S-LLM: Dựa trên ý tưởng từ TabLLM, nhóm thử nghiệm cách mã hóa từng hàng dữ liệu bằng một mô hình ngôn ngữ lớn (LLM) với mỗi hàng được biểu diễn dưới dạng một câu và mã hóa bằng mô hình intfloat/e5-small-v2 từ HuggingFace. Khác với TabLLM, đầu ra được chuyển vào mô hình XGB để học cho cả hai bài toán hồi quy và phân loại. Với các cột dữ liệu số thì hoặc nối trực tiếp như  các đặc trưng bổ sung đầu vào (CN), hoặc chuyển đổi thành chuỗi trước khi đưa vào LLM (EN).
+    \item TabPFN: Một mô hình transformer được huấn luyện trước trên dữ liệu tổng hợp, giúp dự đoán cho các tập dữ liệu nhỏ chỉ với một lần suy luận. Các đặc trưng văn bản được xử lý dưới dạng phân loại và mã hóa với phương pháp mã hóa mục tiêu.
 \end{itemize}
 
 
-\subsection{Kết Quả trên Bảng Đơn}
-CARTE vượt trội so với các phương pháp khác trong việc học trên bảng dữ liệu đơn. Hình \ref{fig:carte_performance_comparison} so sánh hiệu suất dự đoán của nhiều phương pháp trên các bộ dữ liệu khác nhau. Kết quả cho thấy CARTE luôn đạt hiệu suất cao hơn so với các phương pháp thay thế, bất kể kích thước mẫu. Điều này đúng cả khi sử dụng điểm số chuẩn hóa hoặc sơ đồ sự khác biệt có ý nghĩa thống kê, được kiểm tra bằng phương pháp Conover sau khi thực hiện kiểm định Friedman.
+\subsection{Kết Quả trên Bảng Đơn} 
+Trong mảng học trên bảng dữ liệu đơn thì CARTE vượt trội so với các phương pháp khác. Hình \ref{fig:carte_performance_comparison} so sánh hiệu suất trong tác vụ dự đoán trên các bộ dữ liệu khác nhau và kết quả cho thấy CARTE luôn đạt hiệu suất cao hơn so với các phương pháp thay thế, bất kể kích thước mẫu. Điều này đúng cả khi sử dụng điểm số chuẩn hóa hoặc sơ đồ sự khác biệt có ý nghĩa thống kê, được kiểm tra bằng phương pháp Conover sau khi thực hiện kiểm định Friedman.
 
 \begin{figure} 
     \centering
