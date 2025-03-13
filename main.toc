@@ -1,14 +1,14 @@
 \contentsline {section}{\numberline {1}Giới thiệu sơ lược}{1}{}%
 \contentsline {section}{\numberline {2}Các Nghiên Cứu Liên Quan}{2}{}%
-\contentsline {section}{\numberline {3}Cách Mô Hình CARTE Học từ Dữ Liệu Bảng}{4}{}%
+\contentsline {section}{\numberline {3}Cách Mô Hình CARTE Học từ Dữ Liệu Bảng}{3}{}%
 \contentsline {subsection}{\numberline {3.1}Biểu Diễn Đồ Thị của Đối Tượng Bảng}{4}{}%
 \contentsline {subsection}{\numberline {3.2}Tiền Huấn Luyện Mô Hình từ Cơ Sở Tri Thức Lớn}{5}{}%
-\contentsline {subsection}{\numberline {3.3}Tinh Chỉnh cho Tác Vụ}{9}{}%
-\contentsline {subsubsection}{\numberline {3.3.1}Suy luận trên dữ liệu bảng đơn}{9}{}%
+\contentsline {subsection}{\numberline {3.3}Tinh Chỉnh cho Tác Vụ}{8}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Suy luận trên dữ liệu bảng đơn}{8}{}%
 \contentsline {subsubsection}{\numberline {3.3.2}Học chuyển giao từ một bảng nguồn sang bảng đích}{9}{}%
 \contentsline {subsubsection}{\numberline {3.3.3}Học chung trên nhiều bảng}{10}{}%
-\contentsline {section}{\numberline {4}Nghiên Cứu Thực Nghiệm}{11}{}%
-\contentsline {subsection}{\numberline {4.1}Cài Đặt Thực Nghiệm}{11}{}%
-\contentsline {subsection}{\numberline {4.2}Kết Quả trên Bảng Đơn}{12}{}%
-\contentsline {subsection}{\numberline {4.3}Học Đa Bảng}{15}{}%
-\contentsline {section}{\numberline {5}Bàn Luận và Kết Luận}{16}{}%
+\contentsline {section}{\numberline {4}Nghiên Cứu Thực Nghiệm}{10}{}%
+\contentsline {subsection}{\numberline {4.1}Cài Đặt Thực Nghiệm}{10}{}%
+\contentsline {subsection}{\numberline {4.2}Kết Quả trên Bảng Đơn}{11}{}%
+\contentsline {subsection}{\numberline {4.3}Học Đa Bảng}{14}{}%
+\contentsline {section}{\numberline {5}Bàn Luận và Kết Luận}{15}{}%
