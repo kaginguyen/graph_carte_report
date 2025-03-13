@@ -1,23 +1,23 @@
 \relax 
-\abx@aux@refcontext{nty/global//global/global}
+\abx@aux@refcontext{nty/global//global/global/global}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Giới thiệu sơ lược}{1}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2}Các Nghiên Cứu Liên Quan}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Cách Mô Hình CARTE Học từ Dữ Liệu Bảng}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Biểu Diễn Đồ Thị của Đối Tượng Bảng}{4}{}\protected@file@percent }
-\newlabel{sec:graph_representation}{{3.1}{4}}
+\newlabel{sec:graph_representation}{{3.1}{4}{}{subsection.3.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces CARTE biểu diễn mỗi hàng của bảng dưới dạng một đồ thị hình sao (graphlet). Các nút lá chứa giá trị ô và tên cột tương ứng. Các đặc trưng nút được khởi tạo bằng mô hình ngôn ngữ, trong đó giá trị số được điều chỉnh bằng đặc trưng cột. Nút trung tâm, ban đầu là trung bình của các nút lá, đóng vai trò tổng hợp thông tin của graphlet.}}{5}{}\protected@file@percent }
-\newlabel{fig:graphlet_representation_of_tabular_entity}{{1}{5}}
+\newlabel{fig:graphlet_representation_of_tabular_entity}{{1}{5}{}{figure.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Tiền Huấn Luyện Mô Hình từ Cơ Sở Tri Thức Lớn}{5}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces CARTE tiền huấn luyện bằng cách tạo graphlet từ một đồ thị tri thức lớn. Những graphlet này được đưa vào mạng nơ-ron để huấn luyện theo phương pháp tự giám sát, giúp mô hình học cách tổng hợp thông tin từ các bảng thông qua quan hệ giữa các cột.}}{6}{}\protected@file@percent }
-\newlabel{fig:carte_pretraining_process}{{2}{6}}
+\newlabel{fig:carte_pretraining_process}{{2}{6}{}{figure.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces CARTE sử dụng các đồ thị làm đầu vào, với đặc trưng là các nút và cạnh được dùng trong lớp self-attention. Các lớp này cập nhật đặc trưng nút dựa trên thông tin cạnh và sử dụng attention mask để duy trì cấu trúc đồ thị. Lớp Tổng hợp \& Đọc trích xuất đặc trưng từ nút trung tâm (center node), và đầu ra cuối cùng được dùng để tính toán cho hàm mất mát đối lập (contrastive loss).}}{7}{}\protected@file@percent }
-\newlabel{fig:carte_architecture}{{3}{7}}
+\newlabel{fig:carte_architecture}{{3}{7}{}{figure.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 3 thành phần chính của cơ chế attention}}{8}{}\protected@file@percent }
-\newlabel{fig:architecture_attention_mechanic}{{4}{8}}
+\newlabel{fig:architecture_attention_mechanic}{{4}{8}{}{figure.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Công thức Attention Score theo phương pháp scaled dot-product attention}}{8}{}\protected@file@percent }
-\newlabel{fig:attention_score}{{5}{8}}
+\newlabel{fig:attention_score}{{5}{8}{}{figure.5}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Kết quả của lớp attention.}}{9}{}\protected@file@percent }
-\newlabel{fig:attention_layers_output}{{6}{9}}
+\newlabel{fig:attention_layers_output}{{6}{9}{}{figure.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Tinh Chỉnh cho Tác Vụ}{9}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Suy luận trên dữ liệu bảng đơn}{9}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Học chuyển giao từ một bảng nguồn sang bảng đích}{9}{}\protected@file@percent }
@@ -26,22 +26,22 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Cài Đặt Thực Nghiệm}{11}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Kết Quả trên Bảng Đơn}{12}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces CARTE đạt hiệu suất tốt nhất khi học trên các bảng đơn lẻ, được đánh giá qua các bài toán hồi quy và phân loại. Điểm số chuẩn hóa cho thấy CARTE vượt trội so với các phương pháp khác trên nhiều kích thước tập huấn luyện. Sơ đồ khác biệt tới hạn minh họa sự chênh lệch hiệu suất giữa các mô hình trên toàn bộ tập dữ liệu.}}{13}{}\protected@file@percent }
-\newlabel{fig:carte_performance_comparison}{{7}{13}}
+\newlabel{fig:carte_performance_comparison}{{7}{13}{}{figure.7}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces CARTE cho thấy độ ổn định cao khi xử lý dữ liệu thiếu. Hiệu suất chỉ giảm nhẹ khi một tỷ lệ đặc trưng (10\% hoặc 30\%) bị loại bỏ ngẫu nhiên. Điểm số chuẩn hóa phản ánh khả năng thích ứng tốt của mô hình với dữ liệu không đầy đủ.}}{13}{}\protected@file@percent }
-\newlabel{fig:carte_robust_to_missing_value}{{8}{13}}
+\newlabel{fig:carte_robust_to_missing_value}{{8}{13}{}{figure.8}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Thời gian tính toán (đơn vị giây) được đo lường cho bốn phương pháp hàng đầu, bao gồm các giai đoạn tiền xử lý, huấn luyện và kiểm tra trên 51 tập dữ liệu. So sánh này giúp đánh giá hiệu suất tổng thể của các mô hình trong thực tế.}}{14}{}\protected@file@percent }
-\newlabel{fig:carte_computation_time}{{9}{14}}
+\newlabel{fig:carte_computation_time}{{9}{14}{}{figure.9}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces CARTE không yêu cầu đối sánh thực thể, và các thực thể trong bài toán không cần xuất hiện trong YAGO. Nhóm đánh giá CARTE và KEN trên toàn bộ tập dữ liệu cũng như phiên bản rút gọn chỉ chứa các thực thể có trong YAGO. Khi sử dụng KEN để bổ sung thông tin, CatBoost được chọn làm bộ ước lượng, với các thực thể không khớp bị thay thế bằng giá trị thiếu. Kết quả cho thấy KEN giúp cải thiện hiệu suất của CatBoost trên các thực thể trong YAGO, xác nhận giá trị của việc bổ sung từ thông tin nền.}}{14}{}\protected@file@percent }
-\newlabel{fig:carte_entity_matching_not_required}{{10}{14}}
+\newlabel{fig:carte_entity_matching_not_required}{{10}{14}{}{figure.10}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Bộ dữ liệu đánh giá trong nghiên cứu này khác với bộ dữ liệu của TabLLM ở chỗ chứa nhiều cột danh mục hơn, đặc biệt là các cột có số lượng giá trị phân biệt (cardinality) cao. Điều này giúp kiểm tra khả năng xử lý dữ liệu bảng phức tạp của các mô hình một cách toàn diện hơn.}}{15}{}\protected@file@percent }
-\newlabel{fig:carte_vs_tabllm_dataset}{{11}{15}}
+\newlabel{fig:carte_vs_tabllm_dataset}{{11}{15}{}{figure.11}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces So sánh với ba phương pháp trong TabLLM cho thấy rằng các tập dữ liệu này chủ yếu chứa đặc trưng số hoặc cột danh mục có số lượng giá trị thấp. Trong bối cảnh này, TabPFN đạt hiệu suất cao nhất, tiếp theo là CARTE, XGBoost và cuối cùng là TabLLM.}}{15}{}\protected@file@percent }
-\newlabel{fig:carte_baseline_comparision}{{12}{15}}
+\newlabel{fig:carte_baseline_comparision}{{12}{15}{}{figure.12}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Học Đa Bảng}{15}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces CARTE không yêu cầu đối sánh lược đồ và vẫn cải thiện hiệu suất nhờ học chung. Nhóm so sánh ba kịch bản: học trên bảng đơn lẻ (đường nét đứt), học chuyển giao tự động không cần thao tác thủ công (đường liền), và học chuyển giao sau khi đối sánh cột thủ công (đường chấm). Kết quả cho thấy học chung giúp CARTE đạt hiệu suất cao một cách nhất quán.}}{16}{}\protected@file@percent }
-\newlabel{fig:carte_schema_matching_not_required}{{13}{16}}
+\newlabel{fig:carte_schema_matching_not_required}{{13}{16}{}{figure.13}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Bàn Luận và Kết Luận}{16}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces CARTE tiếp tục cải thiện hiệu suất khi có thêm các bảng dữ liệu nguồn, cho thấy khả năng tận dụng thông tin từ nhiều nguồn để nâng cao độ chính xác của mô hình.}}{17}{}\protected@file@percent }
-\newlabel{fig:carte_benefits_from_additional_source_tables}{{14}{17}}
-\abx@aux@read@bbl@mdfivesum{EE04F40F768DAEED26442158E95ABA61}
+\newlabel{fig:carte_benefits_from_additional_source_tables}{{14}{17}{}{figure.14}{}}
+\abx@aux@read@bbl@mdfivesum{76D65A242EC496C9B4361AF646FF12CB}
 \gdef \@abspage@last{18}
