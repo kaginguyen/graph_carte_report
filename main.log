@@ -1,38 +1,39 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.7.22)  14 MAR 2025 02:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.16)  15 MAR 2025 15:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **/home/kagi/codes/graph_carte_report/main.tex
 (/home/kagi/codes/graph_carte_report/main.tex
-LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+LaTeX2e <2024-11-01>
+L3 programming layer <2024-11-02>
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count185
-\c@section=\count186
-\c@subsection=\count187
-\c@subsubsection=\count188
-\c@paragraph=\count189
-\c@subparagraph=\count190
-\c@figure=\count191
-\c@table=\count192
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen138
-) (/usr/share/texlive/texmf-dist/tex/latex/vntex/vietnam.sty
+\c@part=\count196
+\c@section=\count197
+\c@subsection=\count198
+\c@subsubsection=\count199
+\c@paragraph=\count266
+\c@subparagraph=\count267
+\c@figure=\count268
+\c@table=\count269
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/vntex/vietnam.sty
 Package: vietnam 2009/07/12 v1.3 support for Vietnamese
- (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
- (/usr/share/texlive/texmf-dist/tex/latex/vntex/t5enc.def
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/vntex/t5enc.def
 File: t5enc.def 2006/11/21 v1.4 Vietnamese T5 encoding
 Now handling font encoding T5 ...
 ... processing UTF-8 mapping file for font encoding T5
- (/usr/share/texlive/texmf-dist/tex/latex/vntex/t5enc.dfu
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/vntex/t5enc.dfu
 File: t5enc.dfu 2006/08/19 v1.1 UTF8 support for Vietnamese
    defining Unicode char U+00AB (decimal 171)
    defining Unicode char U+00BB (decimal 187)
@@ -186,246 +187,247 @@ File: t5enc.dfu 2006/08/19 v1.1 UTF8 support for Vietnamese
    defining Unicode char U+203A (decimal 8250)
    defining Unicode char U+2423 (decimal 9251)
 ))
-LaTeX Font Info:    Trying to load font information for T5+cmr on input line 112.
- (/usr/share/texlive/texmf-dist/tex/latex/vntex/t5cmr.fd
+LaTeX Font Info:    Trying to load font information for T5+cmr on input line 116.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/vntex/t5cmr.fd
 File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks16
-\inpenc@posthook=\toks17
-) (/usr/share/texlive/texmf-dist/tex/latex/vntex/vncaps.tex
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/vntex/vncaps.tex
 File: vncaps.tex 2006/06/07 v1.1 Captions in Vietnamese
-)) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks18
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 107.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+Package graphics Info: Driver file: pdftex.def on input line 106.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen139
-\Gin@req@width=\dimen140
-) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
-Package: biblatex 2022/02/02 v3.17 programmable bibliographies (PK/MW)
- (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+\Gin@req@height=\dimen142
+\Gin@req@width=\dimen143
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2024/03/21 v3.20 programmable bibliographies (PK/MW)
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
-) (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count193
-) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)) (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+\etb@tempcnta=\count270
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count194
- (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+\lrq@indent=\count271
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip16
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count195
-\c@listtotal=\count196
-\c@listcount=\count197
-\c@liststart=\count198
-\c@liststop=\count199
-\c@citecount=\count266
-\c@citetotal=\count267
-\c@multicitecount=\count268
-\c@multicitetotal=\count269
-\c@instcount=\count270
-\c@maxnames=\count271
-\c@minnames=\count272
-\c@maxitems=\count273
-\c@minitems=\count274
-\c@citecounter=\count275
-\c@maxcitecounter=\count276
-\c@savedcitecounter=\count277
-\c@uniquelist=\count278
-\c@uniquename=\count279
-\c@refsection=\count280
-\c@refsegment=\count281
-\c@maxextratitle=\count282
-\c@maxextratitleyear=\count283
-\c@maxextraname=\count284
-\c@maxextradate=\count285
-\c@maxextraalpha=\count286
-\c@abbrvpenalty=\count287
-\c@highnamepenalty=\count288
-\c@lownamepenalty=\count289
-\c@maxparens=\count290
-\c@parenlevel=\count291
-\blx@tempcnta=\count292
-\blx@tempcntb=\count293
-\blx@tempcntc=\count294
-\c@blx@maxsection=\count295
-\c@blx@maxsegment@0=\count296
-\blx@notetype=\count297
-\blx@parenlevel@text=\count298
-\blx@parenlevel@foot=\count299
-\c@blx@sectionciteorder@0=\count300
-\blx@entrysetcounter=\count301
-\blx@biblioinstance=\count302
-\labelnumberwidth=\skip49
-\labelalphawidth=\skip50
-\biblabelsep=\skip51
-\bibitemsep=\skip52
-\bibnamesep=\skip53
-\bibinitsep=\skip54
-\bibparsep=\skip55
-\bibhang=\skip56
+\c@tabx@nest=\count272
+\c@listtotal=\count273
+\c@listcount=\count274
+\c@liststart=\count275
+\c@liststop=\count276
+\c@citecount=\count277
+\c@citetotal=\count278
+\c@multicitecount=\count279
+\c@multicitetotal=\count280
+\c@instcount=\count281
+\c@maxnames=\count282
+\c@minnames=\count283
+\c@maxitems=\count284
+\c@minitems=\count285
+\c@citecounter=\count286
+\c@maxcitecounter=\count287
+\c@savedcitecounter=\count288
+\c@uniquelist=\count289
+\c@uniquename=\count290
+\c@refsection=\count291
+\c@refsegment=\count292
+\c@maxextratitle=\count293
+\c@maxextratitleyear=\count294
+\c@maxextraname=\count295
+\c@maxextradate=\count296
+\c@maxextraalpha=\count297
+\c@abbrvpenalty=\count298
+\c@highnamepenalty=\count299
+\c@lownamepenalty=\count300
+\c@maxparens=\count301
+\c@parenlevel=\count302
+\blx@tempcnta=\count303
+\blx@tempcntb=\count304
+\blx@tempcntc=\count305
+\c@blx@maxsection=\count306
+\blx@maxsegment@0=\count307
+\blx@notetype=\count308
+\blx@parenlevel@text=\count309
+\blx@parenlevel@foot=\count310
+\blx@sectionciteorder@0=\count311
+\blx@sectionciteorderinternal@0=\count312
+\blx@entrysetcounter=\count313
+\blx@biblioinstance=\count314
+\labelnumberwidth=\skip51
+\labelalphawidth=\skip52
+\biblabelsep=\skip53
+\bibitemsep=\skip54
+\bibnamesep=\skip55
+\bibinitsep=\skip56
+\bibparsep=\skip57
+\bibhang=\skip58
 \blx@bcfin=\read2
 \blx@bcfout=\write3
-\blx@langwohyphens=\language87
-\c@mincomprange=\count303
-\c@maxcomprange=\count304
-\c@mincompwidth=\count305
+\blx@langwohyphens=\language89
+\c@mincomprange=\count315
+\c@maxcomprange=\count316
+\c@mincompwidth=\count317
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
-File: blx-dm.def 2022/02/02 v3.17 biblatex localization (PK/MW)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2024/03/21 v3.20 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count306
-\c@savedafterword=\count307
-\c@annotator=\count308
-\c@savedannotator=\count309
-\c@author=\count310
-\c@savedauthor=\count311
-\c@bookauthor=\count312
-\c@savedbookauthor=\count313
-\c@commentator=\count314
-\c@savedcommentator=\count315
-\c@editor=\count316
-\c@savededitor=\count317
-\c@editora=\count318
-\c@savededitora=\count319
-\c@editorb=\count320
-\c@savededitorb=\count321
-\c@editorc=\count322
-\c@savededitorc=\count323
-\c@foreword=\count324
-\c@savedforeword=\count325
-\c@holder=\count326
-\c@savedholder=\count327
-\c@introduction=\count328
-\c@savedintroduction=\count329
-\c@namea=\count330
-\c@savednamea=\count331
-\c@nameb=\count332
-\c@savednameb=\count333
-\c@namec=\count334
-\c@savednamec=\count335
-\c@translator=\count336
-\c@savedtranslator=\count337
-\c@shortauthor=\count338
-\c@savedshortauthor=\count339
-\c@shorteditor=\count340
-\c@savedshorteditor=\count341
-\c@labelname=\count342
-\c@savedlabelname=\count343
-\c@institution=\count344
-\c@savedinstitution=\count345
-\c@lista=\count346
-\c@savedlista=\count347
-\c@listb=\count348
-\c@savedlistb=\count349
-\c@listc=\count350
-\c@savedlistc=\count351
-\c@listd=\count352
-\c@savedlistd=\count353
-\c@liste=\count354
-\c@savedliste=\count355
-\c@listf=\count356
-\c@savedlistf=\count357
-\c@location=\count358
-\c@savedlocation=\count359
-\c@organization=\count360
-\c@savedorganization=\count361
-\c@origlocation=\count362
-\c@savedoriglocation=\count363
-\c@origpublisher=\count364
-\c@savedorigpublisher=\count365
-\c@publisher=\count366
-\c@savedpublisher=\count367
-\c@language=\count368
-\c@savedlanguage=\count369
-\c@origlanguage=\count370
-\c@savedoriglanguage=\count371
-\c@pageref=\count372
-\c@savedpageref=\count373
-\shorthandwidth=\skip57
-\shortjournalwidth=\skip58
-\shortserieswidth=\skip59
-\shorttitlewidth=\skip60
-\shortauthorwidth=\skip61
-\shorteditorwidth=\skip62
-\locallabelnumberwidth=\skip63
-\locallabelalphawidth=\skip64
-\localshorthandwidth=\skip65
-\localshortjournalwidth=\skip66
-\localshortserieswidth=\skip67
-\localshorttitlewidth=\skip68
-\localshortauthorwidth=\skip69
-\localshorteditorwidth=\skip70
+\c@afterword=\count318
+\c@savedafterword=\count319
+\c@annotator=\count320
+\c@savedannotator=\count321
+\c@author=\count322
+\c@savedauthor=\count323
+\c@bookauthor=\count324
+\c@savedbookauthor=\count325
+\c@commentator=\count326
+\c@savedcommentator=\count327
+\c@editor=\count328
+\c@savededitor=\count329
+\c@editora=\count330
+\c@savededitora=\count331
+\c@editorb=\count332
+\c@savededitorb=\count333
+\c@editorc=\count334
+\c@savededitorc=\count335
+\c@foreword=\count336
+\c@savedforeword=\count337
+\c@holder=\count338
+\c@savedholder=\count339
+\c@introduction=\count340
+\c@savedintroduction=\count341
+\c@namea=\count342
+\c@savednamea=\count343
+\c@nameb=\count344
+\c@savednameb=\count345
+\c@namec=\count346
+\c@savednamec=\count347
+\c@translator=\count348
+\c@savedtranslator=\count349
+\c@shortauthor=\count350
+\c@savedshortauthor=\count351
+\c@shorteditor=\count352
+\c@savedshorteditor=\count353
+\c@labelname=\count354
+\c@savedlabelname=\count355
+\c@institution=\count356
+\c@savedinstitution=\count357
+\c@lista=\count358
+\c@savedlista=\count359
+\c@listb=\count360
+\c@savedlistb=\count361
+\c@listc=\count362
+\c@savedlistc=\count363
+\c@listd=\count364
+\c@savedlistd=\count365
+\c@liste=\count366
+\c@savedliste=\count367
+\c@listf=\count368
+\c@savedlistf=\count369
+\c@location=\count370
+\c@savedlocation=\count371
+\c@organization=\count372
+\c@savedorganization=\count373
+\c@origlocation=\count374
+\c@savedoriglocation=\count375
+\c@origpublisher=\count376
+\c@savedorigpublisher=\count377
+\c@publisher=\count378
+\c@savedpublisher=\count379
+\c@language=\count380
+\c@savedlanguage=\count381
+\c@origlanguage=\count382
+\c@savedoriglanguage=\count383
+\c@pageref=\count384
+\c@savedpageref=\count385
+\shorthandwidth=\skip59
+\shortjournalwidth=\skip60
+\shortserieswidth=\skip61
+\shorttitlewidth=\skip62
+\shortauthorwidth=\skip63
+\shorteditorwidth=\skip64
+\locallabelnumberwidth=\skip65
+\locallabelalphawidth=\skip66
+\localshorthandwidth=\skip67
+\localshortjournalwidth=\skip68
+\localshortserieswidth=\skip69
+\localshorttitlewidth=\skip70
+\localshortauthorwidth=\skip71
+\localshorteditorwidth=\skip72
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
-File: blx-compat.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
-File: biblatex.def 2022/02/02 v3.17 biblatex compatibility (PK/MW)
-\c@textcitecount=\count374
-\c@textcitetotal=\count375
-\c@textcitemaxnames=\count376
-\c@biburlbigbreakpenalty=\count377
-\c@biburlbreakpenalty=\count378
-\c@biburlnumpenalty=\count379
-\c@biburlucpenalty=\count380
-\c@biburllcpenalty=\count381
-\biburlbigskip=\muskip17
-\biburlnumskip=\muskip18
-\biburlucskip=\muskip19
-\biburllcskip=\muskip20
-\c@smartand=\count382
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2024/03/21 v3.20 biblatex compatibility (PK/MW)
+\c@textcitecount=\count386
+\c@textcitetotal=\count387
+\c@textcitemaxnames=\count388
+\c@biburlbigbreakpenalty=\count389
+\c@biburlbreakpenalty=\count390
+\c@biburlnumpenalty=\count391
+\c@biburlucpenalty=\count392
+\c@biburllcpenalty=\count393
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count394
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
-File: numeric.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
-File: standard.bbx 2022/02/02 v3.17 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count383
-\c@bbx:relatedtotal=\count384
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2024/03/21 v3.20 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count395
+\c@bbx:relatedtotal=\count396
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
-File: numeric.cbx 2022/02/02 v3.17 biblatex citation style (PK/MW)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2024/03/21 v3.20 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -440,31 +442,31 @@ Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
- (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-01-21 L3 programming layer (loader) 
- (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count385
-\l__pdf_internal_box=\box50
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-11-02 L3 programming layer (loader) 
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count397
+\l__pdf_internal_box=\box52
 ))
 Package biblatex Info: ... and expl3
-(biblatex)             2022-01-21 L3 programming layer (loader) 
+(biblatex)             2024-11-02 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2022-01-12 L3 Experimental document command parser
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2024-08-16 L3 Experimental document command parser
 )
-Package: blx-case-expl3 2022/02/02 v3.17 expl3 case changing code for biblatex
-)) (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty
+Package: blx-case-expl3 2024/03/21 v3.20 expl3 case changing code for biblatex
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/doublestroke/dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
 )
-\@quotelevel=\count386
-\@quotereset=\count387
+\@quotelevel=\count398
+\@quotereset=\count399
  (./main.aux)
 \openout1 = `main.aux'.
 
@@ -484,29 +486,29 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count388
-\scratchdimen=\dimen141
-\scratchbox=\box51
-\nofMPsegments=\count389
-\nofMParguments=\count390
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count391
-\MPscratchDim=\dimen142
-\MPnumerator=\count392
-\makeMPintoPDFobject=\count393
-\everyMPtoPDFconversion=\toks20
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+\scratchcounter=\count400
+\scratchdimen=\dimen144
+\scratchbox=\box53
+\nofMPsegments=\count401
+\nofMParguments=\count402
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count403
+\MPscratchDim=\dimen145
+\MPnumerator=\count404
+\makeMPintoPDFobject=\count405
+\everyMPtoPDFconversion=\toks21
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
-File: english.lbx 2022/02/02 v3.17 biblatex localization (PK/MW)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
@@ -533,99 +535,136 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-<images//graphlet_representation_of_tabular_entity.png, id=17, 236.885pt x 107.40125pt>
-File: images//graphlet_representation_of_tabular_entity.png Graphic file (type png)
-<use images//graphlet_representation_of_tabular_entity.png>
-Package pdftex.def Info: images//graphlet_representation_of_tabular_entity.png  used on input line 58.
+
+[1
+
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+[2]
+
+[3]
+<images/graphlet_representation_of_tabular_entity.png, id=17, 236.885pt x 107.40125pt>
+File: images/graphlet_representation_of_tabular_entity.png Graphic file (type png)
+<use images/graphlet_representation_of_tabular_entity.png>
+Package pdftex.def Info: images/graphlet_representation_of_tabular_entity.png  used on input line 58.
 (pdftex.def)             Requested size: 236.88441pt x 107.40097pt.
- [4 <./images//graphlet_representation_of_tabular_entity.png>]
-<images//carte_pretraining_process.png, id=27, 266.49562pt x 234.1247pt>
-File: images//carte_pretraining_process.png Graphic file (type png)
-<use images//carte_pretraining_process.png>
-Package pdftex.def Info: images//carte_pretraining_process.png  used on input line 74.
+
+
+[4 <./images/graphlet_representation_of_tabular_entity.png>]
+<images/carte_pretraining_process.png, id=27, 266.49562pt x 234.1247pt>
+File: images/carte_pretraining_process.png Graphic file (type png)
+<use images/carte_pretraining_process.png>
+Package pdftex.def Info: images/carte_pretraining_process.png  used on input line 74.
 (pdftex.def)             Requested size: 213.19678pt x 187.3pt.
- [5]
-<images//carte_architecture.png, id=31, 274.02374pt x 220.57407pt>
-File: images//carte_architecture.png Graphic file (type png)
-<use images//carte_architecture.png>
-Package pdftex.def Info: images//carte_architecture.png  used on input line 93.
+
+
+[5]
+<images/carte_architecture.png, id=31, 274.02374pt x 220.57407pt>
+File: images/carte_architecture.png Graphic file (type png)
+<use images/carte_architecture.png>
+Package pdftex.def Info: images/carte_architecture.png  used on input line 93.
 (pdftex.def)             Requested size: 219.21928pt x 176.45947pt.
- [6 <./images//carte_pretraining_process.png>]
-<images//architecture_attention_mechanic.png, id=36, 277.78781pt x 65.49469pt>
-File: images//architecture_attention_mechanic.png Graphic file (type png)
-<use images//architecture_attention_mechanic.png>
-Package pdftex.def Info: images//architecture_attention_mechanic.png  used on input line 104.
+
+
+[6 <./images/carte_pretraining_process.png>]
+<images/architecture_attention_mechanic.png, id=36, 277.78781pt x 65.49469pt>
+File: images/architecture_attention_mechanic.png Graphic file (type png)
+<use images/architecture_attention_mechanic.png>
+Package pdftex.def Info: images/architecture_attention_mechanic.png  used on input line 104.
 (pdftex.def)             Requested size: 222.23053pt x 52.3958pt.
-<images//attention_score.png, id=37, 237.13594pt x 45.16875pt>
-File: images//attention_score.png Graphic file (type png)
-<use images//attention_score.png>
-Package pdftex.def Info: images//attention_score.png  used on input line 113.
+<images/attention_score.png, id=37, 237.13594pt x 45.16875pt>
+File: images/attention_score.png Graphic file (type png)
+<use images/attention_score.png>
+Package pdftex.def Info: images/attention_score.png  used on input line 113.
 (pdftex.def)             Requested size: 189.709pt x 36.13503pt.
- [7 <./images//carte_architecture.png> <./images//architecture_attention_mechanic.png>] [8 <./images//attention_score.png>] [9] [10]
-<images//carte_performance_comparison.png, id=56, 486.31688pt x 293.59688pt>
-File: images//carte_performance_comparison.png Graphic file (type png)
-<use images//carte_performance_comparison.png>
-Package pdftex.def Info: images//carte_performance_comparison.png  used on input line 179.
+
+
+[7 <./images/carte_architecture.png> <./images/architecture_attention_mechanic.png>]
+
+[8 <./images/attention_score.png>]
+
+[9{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+[10]
+<images/carte_performance_comparison.png, id=56, 486.31688pt x 293.59688pt>
+File: images/carte_performance_comparison.png Graphic file (type png)
+<use images/carte_performance_comparison.png>
+Package pdftex.def Info: images/carte_performance_comparison.png  used on input line 179.
 (pdftex.def)             Requested size: 340.4195pt x 205.5164pt.
-<images//carte_robust_to_missing_value.png, id=57, 247.42438pt x 169.13188pt>
-File: images//carte_robust_to_missing_value.png Graphic file (type png)
-<use images//carte_robust_to_missing_value.png>
-Package pdftex.def Info: images//carte_robust_to_missing_value.png  used on input line 188.
+<images/carte_robust_to_missing_value.png, id=57, 247.42438pt x 169.13188pt>
+File: images/carte_robust_to_missing_value.png Graphic file (type png)
+<use images/carte_robust_to_missing_value.png>
+Package pdftex.def Info: images/carte_robust_to_missing_value.png  used on input line 188.
 (pdftex.def)             Requested size: 197.93976pt x 135.30568pt.
-<images//carte_computation_time.png, id=58, 248.42813pt x 82.80937pt>
-File: images//carte_computation_time.png Graphic file (type png)
-<use images//carte_computation_time.png>
-Package pdftex.def Info: images//carte_computation_time.png  used on input line 197.
+
+
+[11 <./images/carte_performance_comparison.png>]
+<images/carte_computation_time.png, id=62, 248.42813pt x 82.80937pt>
+File: images/carte_computation_time.png Graphic file (type png)
+<use images/carte_computation_time.png>
+Package pdftex.def Info: images/carte_computation_time.png  used on input line 197.
 (pdftex.def)             Requested size: 198.74277pt x 66.24757pt.
- [11] [12 <./images//carte_performance_comparison.png> <./images//carte_robust_to_missing_value.png>]
-<images//carte_entity_matching_not_required.png, id=67, 231.86626pt x 153.57375pt>
-File: images//carte_entity_matching_not_required.png Graphic file (type png)
-<use images//carte_entity_matching_not_required.png>
-Package pdftex.def Info: images//carte_entity_matching_not_required.png  used on input line 208.
+
+
+[12 <./images/carte_robust_to_missing_value.png> <./images/carte_computation_time.png>]
+<images/carte_entity_matching_not_required.png, id=68, 231.86626pt x 153.57375pt>
+File: images/carte_entity_matching_not_required.png Graphic file (type png)
+<use images/carte_entity_matching_not_required.png>
+Package pdftex.def Info: images/carte_entity_matching_not_required.png  used on input line 208.
 (pdftex.def)             Requested size: 185.49324pt x 122.85915pt.
-<images//carte_vs_tabllm_dataset.png, id=68, 239.39438pt x 75.78313pt>
-File: images//carte_vs_tabllm_dataset.png Graphic file (type png)
-<use images//carte_vs_tabllm_dataset.png>
-Package pdftex.def Info: images//carte_vs_tabllm_dataset.png  used on input line 217.
+<images/carte_vs_tabllm_dataset.png, id=69, 239.39438pt x 75.78313pt>
+File: images/carte_vs_tabllm_dataset.png Graphic file (type png)
+<use images/carte_vs_tabllm_dataset.png>
+Package pdftex.def Info: images/carte_vs_tabllm_dataset.png  used on input line 217.
 (pdftex.def)             Requested size: 191.51575pt x 60.62657pt.
-<images//carte_baseline_comparision.png, id=69, 188.705pt x 57.71562pt>
-File: images//carte_baseline_comparision.png Graphic file (type png)
-<use images//carte_baseline_comparision.png>
-Package pdftex.def Info: images//carte_baseline_comparision.png  used on input line 224.
+<images/carte_baseline_comparision.png, id=70, 188.705pt x 57.71562pt>
+File: images/carte_baseline_comparision.png Graphic file (type png)
+<use images/carte_baseline_comparision.png>
+Package pdftex.def Info: images/carte_baseline_comparision.png  used on input line 224.
 (pdftex.def)             Requested size: 150.96419pt x 46.17255pt.
- [13 <./images//carte_computation_time.png> <./images//carte_entity_matching_not_required.png>]
-<images//carte_schema_matching_not_required.png, id=76, 230.8625pt x 280.04625pt>
-File: images//carte_schema_matching_not_required.png Graphic file (type png)
-<use images//carte_schema_matching_not_required.png>
-Package pdftex.def Info: images//carte_schema_matching_not_required.png  used on input line 240.
+
+
+[13 <./images/carte_entity_matching_not_required.png>]
+<images/carte_schema_matching_not_required.png, id=76, 230.8625pt x 280.04625pt>
+File: images/carte_schema_matching_not_required.png Graphic file (type png)
+<use images/carte_schema_matching_not_required.png>
+Package pdftex.def Info: images/carte_schema_matching_not_required.png  used on input line 240.
 (pdftex.def)             Requested size: 161.60263pt x 196.03102pt.
- [14 <./images//carte_vs_tabllm_dataset.png> <./images//carte_baseline_comparision.png>]
-<images//carte_benefits_from_additional_source_tables.png, id=82, 241.40187pt x 155.58125pt>
-File: images//carte_benefits_from_additional_source_tables.png Graphic file (type png)
-<use images//carte_benefits_from_additional_source_tables.png>
-Package pdftex.def Info: images//carte_benefits_from_additional_source_tables.png  used on input line 251.
+
+
+[14 <./images/carte_vs_tabllm_dataset.png> <./images/carte_baseline_comparision.png>]
+<images/carte_benefits_from_additional_source_tables.png, id=82, 241.40187pt x 155.58125pt>
+File: images/carte_benefits_from_additional_source_tables.png Graphic file (type png)
+<use images/carte_benefits_from_additional_source_tables.png>
+Package pdftex.def Info: images/carte_benefits_from_additional_source_tables.png  used on input line 251.
 (pdftex.def)             Requested size: 193.12175pt x 124.46515pt.
- [15 <./images//carte_schema_matching_not_required.png>] [16 <./images//carte_benefits_from_additional_source_tables.png>] [17] (./main.aux)
+
+
+[15 <./images/carte_schema_matching_not_required.png>]
+
+[16 <./images/carte_benefits_from_additional_source_tables.png>] (./main.aux)
+ ***********
+LaTeX2e <2024-11-01>
+L3 programming layer <2024-11-02>
+ ***********
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 9980 strings out of 478287
- 189401 string characters out of 5849289
- 889964 words of memory out of 5000000
- 28079 multiletter control sequences out of 15000+600000
- 479163 words of font info for 45 fonts, out of 8000000 for 9000
+ 10231 strings out of 473362
+ 194593 string characters out of 5720989
+ 1009893 words of memory out of 5000000
+ 33256 multiletter control sequences out of 15000+600000
+ 567972 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,7n,68p,1548b,801s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb>
-Output written on main.pdf (17 pages, 910468 bytes).
+ 66i,7n,81p,1548b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb>
+Output written on main.pdf (16 pages, 912125 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 139 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
